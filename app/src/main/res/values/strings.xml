@@ -1,3 +1,146 @@
 <resources>
+    <!-- NOMBRE APP -->
     <string name="app_name">Ser</string>
+
+    <!-- TITULOS -->
+    <string name="cosas_que_puedes_controlar">Cosas que puedes controlar</string>
+    <string name="titulo">Ser</string>
+    <string name="registrate">Registrate</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="habito_a_trabajar">Habito a trabajar</string>
+    <string name="actividades">Actividades</string>
+    <string name="hacer_ejercicio">Hacer ejercicio</string>
+    <string name="meditar">Meditar</string>
+    <string name="trabajo_significativo_y_enfocado">Ser</string>
+    <string name="yoga">Yoga</string>
+    <string name="siesta_recargadora">Siesta Recargadora</string>
+    <string name="respirar">Respirar</string>
+    <string name="elongar">Elongar</string>
+    <string name="sientate_y_piensa">Siéntate y Piensa</string>
+    <string name="recomendaciones">Recomendaciones</string>
+    <string name="ritual_matutino">Ritual matutino</string>
+
+    <!-- PANTALLA COSAS QUE PUEDES CONTROLAR -->
+    <string name="tu_rutina_de_suenio">Tu rutina de sueño</string>
+    <string name="como_te_tratas_a_ti_mismo">Cómo te tratas a ti mism@</string>
+    <string name="la_informacion_que_ves_escuchas">La informcaión que ves/escuchas</string>
+    <string name="lo_que_comes">Lo que comes</string>
+    <string name="tu_mentalidad">Tu mentalidad</string>
+    <string name="la_forma_en_la_que_tratas_a_otros">La forma en la que trataas a otros</string>
+    <string name="tu_nivel_de_honestidad">Tu nivel de honestidad</string>
+    <string name="tu_vision_de_la_vida">Tu visión de la vida</string>
+    <string name="que_tan_rapido_te_levantas_luego_de_caer">Que tan rápido te levantas luego de caer</string>
+    <string name="btn_Continuar">Continuar</string>
+
+    <!-- PANTALLA REGISTRO/INICIO DE SESION -->
+    <string name="btn_registrarse">Registrarse</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="correo_elecetronico">Correo electrónico</string>
+    <string name="contrasenia">Contraseña</string>
+    <string name="confirmar_contrasenia">Confirmar contraseña</string>
+    <string name="btn_acceder">Acceder</string>
+
+    <!-- PANTALLA PRINCIPAL -->
+    <string name="tus_rutinas">Tus rutinas</string>
+    <string name="hoy">Hoy</string>
+    <string name="hora">Hora</string>
+
+    <!-- PANTALLA HABITO A TRABAJAR -->
+    <string name="bebe_agua">Bebe agua</string>
+    <string name="hazlo_3_veces_esta_semana_para_lograrlo">Hazlo 3 veces esta semana para lograrlo</string>
+    <string name="has_comlpetado_este_objetivo_hoy">¡Has completado este objetivo hoy!</string>
+    <string name="motivador">Motivador</string>
+    <string name="el_experimento_secreto">El experimento secreto que puede hacerte beber mas agua</string>
+    <string name="leer_mas">Leer más</string>
+    <string name="empieza_donde_estas">Empieza donde estás.</string>
+    <string name="usa_lo_que_tienes">Usa lo que tienes.</string>
+    <string name="haz_lo_que_puedas">Haz lo que puedas.</string>
+    <string name="artur_ashse">Artur Ashe</string>
+    <string name="btn_compartir_cita">Compartir cita</string>
+
+    <!-- PANTALLA HACER EJERCICIO -->
+    <string name="minutos_de_ejercicio">7 minutos de Ejercicio</string>
+    <string name="probado_cientificamente">Probado cientificamente</string>
+    <string name="nueve_min">9m</string>
+    <string name="un_minuto">1 minuto "Solo Muévete"</string>
+    <string name="muevete_aunque_sea_por_un_min">Muévete, aunque sea porun minuto</string>
+    <string name="un_min">1m</string>
+    <string name="corriendo_la_semana_1">Corriendo la semana 1</string>
+    <string name="empezar_a_ejercitarme">Empezar a ejercitarme</string>
+    <string name="quince_min">15m</string>
+    <string name="corriendo_la_semana_2">Corriendo la semana 2</string>
+    <string name="creando_un_ritual">Creando un ritual</string>
+    <string name="veintidos_min">22m</string>
+    <string name="corriendo_la_semana_3">Corriendo la semana 3</string>
+    <string name="transformando_tu_entorno">Transformando tu entorno</string>
+
+    <!-- PANTALLA MEDITAR -->
+    <string name="respiracion_1">Respiración 1</string>
+    <string name="cinco_minuntos_de_introduccion">5 minutos de introducción a la respiración</string>
+    <string name="cinco_min">5m</string>
+    <string name="puerta_a_la_presencia">Puerta a la presencia</string>
+    <string name="estar_presente">Estar Presente</string>
+    <string name="diez_min">10m</string>
+    <string name="el_entrenamiento_e_la_meditacion">El entrenanimiento de la Meditación para Concentrarse</string>
+    <string name="enfocando_tu_mente">Enfocando tu mente</string>
+    <string name="meditacion_con_cuencos">Meditación con Cuencos</string>
+    <string name="solo_el_sonido_de_los_cuencos">Solo el sonido de los cuencos</string>
+    <string name="once_min">11m</string>
+
+    <!-- PANTALLA TRABAJO SIGNIFICATIVO Y ENFOCADO -->
+    <string name="trabajo_profundo">Trabajo Profundo</string>
+    <string name="cuarentaycinco_minutos_de_trabajo_intenso">45 minutos de Trabajo Intenso</string>
+    <string name="cuarentaycinco_min">45m</string>
+    <string name="enfoque_abrasador">Enfoque Abrasador</string>
+    <string name="dos_horas_de_enfoque_intenso">2 horas de Enfoque Intenso</string>
+    <string name="ciento_veinte_min">120m</string>
+
+    <!-- PANTALLA YOGA -->
+    <string name="introduccion_a_los_saludos_al_sol">Introducción a los Saludos al Sol</string>
+    <string name="cinco_minutos_de_introduccion_a_la_meditacion">5 minutos de introducción a la meditación</string>
+    <string name="sies_min">6m</string>
+    <string name="saludos_al_sol">Saludos al Sol</string>
+    <string name="el_antiguo_y_relajante_yoga">El antiguo y Relajante Yoga</string>
+    <string name="cuatro_min">4m</string>
+
+    <!-- PANTALLA SIESTA RECARGADORA -->
+    <string name="siesta_de_10_minutos">Siesta de 10 minutos con Sonidos Naturales</string>
+    <string name="bosque_salvaje_y_canciones_de_la_naturaleza">Bosque Salvaje y Canciones de la Naturaleza</string>
+    <string name="siesta_guiada_con_toques_binaurales">20 minutos para relajar tu cuerpo</string>
+    <string name="veinte_minutos_para_relajar_tu_cuerpo">20 minutos para relajar tu cuerpo</string>
+    <string name="veintitres_min">23m</string>
+    <string name="siesta_de_25_min_con_cafe">Siesta de 25 minutos con Café</string>
+    <string name="con_una_gentil_alarma_al_final">Con una gentil alarma al final</string>
+    <string name="veinticinco_min">25m</string>
+
+    <!-- PANTALLA RESPIRAR -->
+    <string name="respiracion_energizante">Respiración Energizante</string>
+    <string name="como_una_taza_de_cafe">Como una taza de café, ¡pero solo toma 30 segundos!</string>
+    <string name="respiracion_relajante">Respiración Relajante</string>
+    <string name="un_ejercicio_de_respiracion">Un ejercicio de respiración para ayudar a relajarte</string>
+    <string name="medita_con_tu_respiracion">Medita con tu Respiración</string>
+    <string name="respira_con_tu_respiracion">Respira con tu respiración como un Maestro Zen</string>
+
+    <!-- PANTALLA ELONGAR -->
+    <string name="diez_minutos_para_empezar_a_estirarte">10 minutos para Empezar a Estirarte</string>
+    <string name="flexibilidad_diaria">Flexibilidad Diaria</string>
+
+    <!-- PANTALLA SIENTATE Y PIENSA-->
+    <string name="modela_tu_mente">Modela tu mente</string>
+    <string name="reprograma_tu_realidad">Reporgrama tu Realidad</string>
+
+    <!-- PANTALLA RITUAL MATUTINO -->
+    <string name="alarma">Alarma</string>
+    <string name="beber_agua">Beber Agua</string>
+    <string name="salir_a_correr">Salir a correr</string>
+    <string name="objetivo">Objetivo</string>
+    <string name="habitos">Hábitos</string>
+
+    <!-- PANTALLA USUARIO -->
+    <string name="nombre_usuario">Erika</string>
+    <string name="recordatorios">Recordatorios</string>
+    <string name="metas">Metas</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="ayuda">Ayuda</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
 </resources>
