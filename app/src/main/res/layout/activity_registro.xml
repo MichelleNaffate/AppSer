@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    android:background="@color/fondo"
+    tools:context=".RegistroActivity">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/registrate"
+        android:textColor="@color/titulos"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_de_usuario"
+        android:inputType="text"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/last_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/correo_elecetronico"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/e_mail_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/contrasenia"
+        android:inputType="textPassword"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/confirmar_contrasenia"
+        android:inputType="textPassword"
+        android:layout_marginTop="15dp"/>
+
+    <CheckBox
+        android:id="@+id/check_terms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/terms"
+        android:layout_marginTop="15dp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/btnContinuar"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_naranja_button"
+        android:text="@string/btn_registrarse"
+        android:textColor="@color/black" />
+
+</LinearLayout>
