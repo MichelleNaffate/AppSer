@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:padding="30dp"
     tools:context=".MenuMain">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="350dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/round_button"
+        android:text="@string/iniciar_sesion"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btnRegistrarse"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/round_button"
+        android:text="@string/btn_registrarse"
+        android:textColor="@color/black" />
+
+</LinearLayout>
