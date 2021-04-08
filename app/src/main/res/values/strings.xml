@@ -38,6 +38,7 @@
     <string name="correo_elecetronico">Correo electrónico</string>
     <string name="contrasenia">Contraseña</string>
     <string name="confirmar_contrasenia">Confirmar contraseña</string>
+    <string name="terms">I have read and accept terms and conditions of Ser</string>
     <string name="btn_acceder">Acceder</string>
 
     <!-- PANTALLA PRINCIPAL -->
