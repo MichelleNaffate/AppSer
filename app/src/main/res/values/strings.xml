@@ -89,6 +89,7 @@
     <string name="once_min">11m</string>
 
     <!-- PANTALLA TRABAJO SIGNIFICATIVO Y ENFOCADO -->
+    <string name="trabajo_sig_enfo">Trabajo Significativo y Enfocado</string>
     <string name="trabajo_profundo">Trabajo Profundo</string>
     <string name="cuarentaycinco_minutos_de_trabajo_intenso">45 minutos de Trabajo Intenso</string>
     <string name="cuarentaycinco_min">45m</string>

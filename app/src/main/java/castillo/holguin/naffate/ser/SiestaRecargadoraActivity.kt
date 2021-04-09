@@ -1,36 +1,32 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
+import kotlinx.android.synthetic.main.activity_siesta_recargadora.*
 import kotlinx.android.synthetic.main.contenido.view.*
 
-class HacerEjercicioActivity : AppCompatActivity() {
+class SiestaRecargadoraActivity : AppCompatActivity() {
 
-    var adapter: HacerEjercicioActivity.EjerciciosAdapter? = null
+    var adapter: SiestaRecargadoraActivity.EjerciciosAdapter? = null
     var ejercicios = ArrayList<Contenido>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hacer_ejercicio)
+        setContentView(R.layout.activity_siesta_recargadora)
         cargarEjercicios()
-        adapter = HacerEjercicioActivity.EjerciciosAdapter(ejercicios, this)
-        gridviewHacerEjercicio.adapter = adapter
+        adapter = SiestaRecargadoraActivity.EjerciciosAdapter(ejercicios, this)
+        gridviewSiestaRecargadora.adapter = adapter
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("7 Minutos de Ejercicio", "Probado cientificamente","9 min"))
-        ejercicios.add(Contenido("1 minuto ¨Solo Muévete¨","Muévete, aunque sea por un minuto","1 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 1","Empezar a ejercitarme","15 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 2","Creando un ritual","22 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 3","Transformando tu entorno","22 min"))
-
+        ejercicios.add(Contenido("Siesta de 10 Minutos con Sonidos Naturales", "Bosque salvaje y canciones de la naturaleza","11 min"))
+        ejercicios.add(Contenido("Siesta Guiada con Toques Binaturales","20 minutos para relajar tu cuerpo","20 min"))
+        ejercicios.add(Contenido("Siesta de 25 Minutos con Café","Con una gentil alarma al finalizar","25 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {

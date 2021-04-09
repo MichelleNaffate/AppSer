@@ -1,36 +1,32 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
+import kotlinx.android.synthetic.main.activity_trabajo_sig_enfo.*
 import kotlinx.android.synthetic.main.contenido.view.*
 
-class HacerEjercicioActivity : AppCompatActivity() {
 
-    var adapter: HacerEjercicioActivity.EjerciciosAdapter? = null
+class TrabajoSigEnfoActivity : AppCompatActivity() {
+
+    var adapter: TrabajoSigEnfoActivity.EjerciciosAdapter? = null
     var ejercicios = ArrayList<Contenido>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hacer_ejercicio)
+        setContentView(R.layout.activity_trabajo_sig_enfo)
         cargarEjercicios()
-        adapter = HacerEjercicioActivity.EjerciciosAdapter(ejercicios, this)
-        gridviewHacerEjercicio.adapter = adapter
+        adapter = TrabajoSigEnfoActivity.EjerciciosAdapter(ejercicios, this)
+        gridviewTrabajoSigEnfo.adapter = adapter
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("7 Minutos de Ejercicio", "Probado cientificamente","9 min"))
-        ejercicios.add(Contenido("1 minuto ¨Solo Muévete¨","Muévete, aunque sea por un minuto","1 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 1","Empezar a ejercitarme","15 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 2","Creando un ritual","22 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 3","Transformando tu entorno","22 min"))
-
+        ejercicios.add(Contenido("Trabajo Profundo", "45 minutos de trabajo intenso","45 min"))
+        ejercicios.add(Contenido("Enfoque Abrasador","2 horas de trabajo intenso","120 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {

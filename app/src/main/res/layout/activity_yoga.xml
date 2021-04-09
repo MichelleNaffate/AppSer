@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="40dp"
     android:background="@color/fondo"
-    tools:context=".HacerEjercicioActivity">
+    tools:context=".YogaActivity">
 
     <TextView
         android:id="@+id/titulo"
@@ -15,12 +15,12 @@
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:text="@string/hacer_ejercicio"
+        android:text="@string/yoga"
         android:textColor="@color/titulos"
         android:textSize="30sp" />
 
     <GridView
-        android:id="@+id/gridviewHacerEjercicio"
+        android:id="@+id/gridviewYoga"
         android:layout_width="match_parent"
         android:layout_height="487dp"
         android:numColumns="1"

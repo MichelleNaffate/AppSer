@@ -1,36 +1,33 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
+import kotlinx.android.synthetic.main.activity_meditar.*
 import kotlinx.android.synthetic.main.contenido.view.*
 
-class HacerEjercicioActivity : AppCompatActivity() {
+class MeditarActivity : AppCompatActivity() {
 
-    var adapter: HacerEjercicioActivity.EjerciciosAdapter? = null
+    var adapter: MeditarActivity.EjerciciosAdapter? = null
     var ejercicios = ArrayList<Contenido>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_hacer_ejercicio)
+        setContentView(R.layout.activity_meditar)
         cargarEjercicios()
-        adapter = HacerEjercicioActivity.EjerciciosAdapter(ejercicios, this)
-        gridviewHacerEjercicio.adapter = adapter
+        adapter = MeditarActivity.EjerciciosAdapter(ejercicios, this)
+        gridviewMeditar.adapter = adapter
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("7 Minutos de Ejercicio", "Probado cientificamente","9 min"))
-        ejercicios.add(Contenido("1 minuto ¨Solo Muévete¨","Muévete, aunque sea por un minuto","1 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 1","Empezar a ejercitarme","15 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 2","Creando un ritual","22 min"))
-        ejercicios.add(Contenido("Corriendo la Semana 3","Transformando tu entorno","22 min"))
-
+        ejercicios.add(Contenido("Respiración I", "5 minutos de introducción a la meditación","5 min"))
+        ejercicios.add(Contenido("Puerta a la Presencia","Estar presente","10 min"))
+        ejercicios.add(Contenido("El Entrenamiento de la Meditación para Concentrarte","Enfocando tu mente","10 min"))
+        ejercicios.add(Contenido("Meditación con Cuencos","Solo el sonido de cuencos","11 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {
