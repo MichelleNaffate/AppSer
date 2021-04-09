@@ -24,6 +24,7 @@
         android:id="@+id/edit_nombreUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:hint="@string/nombre_de_usuario"
         android:inputType="text"
         android:layout_marginTop="15dp"/>
@@ -32,6 +33,7 @@
         android:id="@+id/edit_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:hint="@string/correo_elecetronico"
         android:inputType="textEmailAddress"
         android:layout_marginTop="15dp" />
@@ -40,6 +42,7 @@
         android:id="@+id/edit_contra"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:hint="@string/contrasenia"
         android:inputType="textPassword"
         android:layout_marginTop="15dp" />
@@ -47,11 +50,20 @@
     <Button
         android:id="@+id/btnAcceder"
         android:layout_width="200dp"
-        android:layout_height="45dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/round_naranja_button"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/btnFuerte"
         android:text="@string/btn_acceder"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        app:cornerRadius="40dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="115dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="117dp"
+        app:srcCompat="@drawable/solecito" />
 
 </LinearLayout>
