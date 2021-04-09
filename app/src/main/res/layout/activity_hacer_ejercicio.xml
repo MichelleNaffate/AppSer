@@ -19,84 +19,17 @@
         android:textColor="@color/titulos"
         android:textSize="30sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <GridView
+        android:id="@+id/gridviewHacerEjercicio"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="487dp"
+        android:numColumns="1"
+        android:padding="20dp" />
 
-
-    <!--
-   <GridLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:columnCount="1"
-       android:layout_marginTop="20dp">
-
-       <Button
-           android:id="@+id/btnEjercicio7"
-           android:layout_width="match_parent"
-           android:layout_height="100dp"
-           android:layout_gravity="center_horizontal"
-           android:layout_marginTop="30dp"
-           android:backgroundTint="@color/btnFuerte"
-           android:text="@string/minutos_de_ejercicio"
-           android:textSize="13sp"
-           android:textColor="@color/white"
-           app:cornerRadius="20dp" />
-
-       <Button
-           android:id="@+id/btnSoloMuevete1"
-           android:layout_width="match_parent"
-           android:layout_height="100dp"
-           android:layout_marginTop="30dp"
-           android:backgroundTint="@color/btnFuerte"
-           android:text="@string/un_minuto"
-           android:textSize="13sp"
-           android:textColor="@color/white"
-           app:cornerRadius="20dp" />
-
-       <Button
-           android:id="@+id/btnCorriendo1"
-           android:layout_width="match_parent"
-           android:layout_height="100dp"
-           android:layout_gravity="center_horizontal"
-           android:layout_marginTop="30dp"
-           android:backgroundTint="@color/btnFuerte"
-           android:text="@string/corriendo_la_semana_1"
-           android:textSize="13sp"
-           android:textColor="@color/white"
-           app:cornerRadius="20dp" />
-
-       <Button
-           android:id="@+id/btnCorriendo2"
-           android:layout_width="match_parent"
-           android:layout_height="100dp"
-           android:layout_gravity="center_horizontal"
-           android:layout_marginTop="30dp"
-           android:backgroundTint="@color/btnFuerte"
-           android:text="@string/corriendo_la_semana_2"
-           android:textSize="13sp"
-           android:textColor="@color/white"
-           app:cornerRadius="20dp" />
-
-       <Button
-           android:id="@+id/btnCorriendo4"
-           android:layout_width="match_parent"
-           android:layout_height="100dp"
-           android:layout_gravity="center_horizontal"
-           android:layout_marginTop="30dp"
-           android:backgroundTint="@color/btnFuerte"
-           android:text="@string/corriendo_la_semana_3"
-           android:textSize="13sp"
-           android:textColor="@color/white"
-           app:cornerRadius="20dp" />
-   </GridLayout>
-
-   <ImageView
-       android:id="@+id/imageView3"
-       android:layout_width="100dp"
-       android:layout_height="115dp"
-       android:layout_marginLeft="150dp"
-       android:layout_marginTop="55dp"
-       app:srcCompat="@drawable/solecito" />
--->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="115dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/solecito" />
 </LinearLayout>
