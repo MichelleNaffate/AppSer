@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo"
+    tools:context=".ritual_matutino">
+
+    <ImageView
+        android:id="@+id/imageViewRecomendaciones"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/recomendaciones"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutHabitos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp">
+
+        <TextView
+            android:id="@+id/textviewHabitos"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:text="@string/habitos"
+            android:textSize="25sp"
+            android:textColor="@color/titulos"/>
+        <TextView
+            android:id="@+id/textviewHoy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hoy"
+            android:textColor="@color/titulos"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/table1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp">
+
+        <TableRow
+            android:id="@+id/tablerow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/imageviewAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_invert_colors_24"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/textviewBeberAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/beber_agua"
+                android:textSize="17sp"
+                android:textColor="@color/titulos"/>
+
+            <Button
+                android:id="@+id/btnObjetivoAgua"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="50dp"
+                android:text="@string/objetivo"
+                android:backgroundTint="@color/btnFuerte"
+                app:cornerRadius="40dp"
+                android:textAllCaps="false"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tablerow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/imageviewCorrer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_directions_run_24"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/textviewCorrer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/salir_a_correr"
+                android:textSize="17sp"
+                android:textColor="@color/titulos"/>
+
+                <Button
+                    android:id="@+id/btnCorrer"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="50dp"
+                    android:text="@string/objetivo"
+                    android:backgroundTint="@color/btnFuerte"
+                    app:cornerRadius="40dp"
+                    android:textAllCaps="false"/>
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="115dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="55dp"
+        app:srcCompat="@drawable/solecito"/>
+
+</LinearLayout>
