@@ -11,18 +11,20 @@ class MenuOpciones : AppCompatActivity() {
         setContentView(R.layout.activity_menu_opciones)
         val button: Button = findViewById(R.id.btnActividades)
         val button2: Button = findViewById(R.id.btnRecomendaciones)
+        val button3: Button = findViewById(R.id.btnHabitoTrabajar)
 
         button.setOnClickListener {
             var intent : Intent = Intent(this, CatalogoActividades:: class.java)
             startActivity(intent)
-
-
         }
         button2.setOnClickListener {
-            var intent : Intent = Intent(this, Recomendaciones2:: class.java)
+            var intent : Intent = Intent(this, RecomendacionesActivity:: class.java)
             startActivity(intent)
+        }
 
-
+        button3.setOnClickListener {
+            var intent : Intent = Intent(this, HabitoTrabajarActivity:: class.java)
+            startActivity(intent)
         }
     }
 }

@@ -37,9 +37,6 @@ class CatalogoActividades : AppCompatActivity() {
         actividades.add(Actividades("Respira", R.drawable.hacer_ejercicio))
         actividades.add(Actividades("Sientate y piensa", R.drawable.hacer_ejercicio))
         actividades.add(Actividades("Elongar", R.drawable.hacer_ejercicio))
-
-
-
          }
 
     class ActividadesAdapter : BaseAdapter {
@@ -74,21 +71,17 @@ class CatalogoActividades : AppCompatActivity() {
                     var intent = Intent(context, SiestaRecargadoraActivity::class.java)
                     context!!.startActivity(intent)
                 }else if (position==5){
-                    var intent = Intent(context, respirar::class.java)
+                    var intent = Intent(context, RespirarActivity::class.java)
                     context!!.startActivity(intent)
                 }else if (position==6){
-                    var intent = Intent(context, sientate_piensa::class.java)
+                    var intent = Intent(context, SientatePiensaActivity::class.java)
                     context!!.startActivity(intent)
                 }else if (position==7){
-                    var intent = Intent(context, elongar::class.java)
+                    var intent = Intent(context, ElongarActivity::class.java)
                     context!!.startActivity(intent)
                 }
-
-
-
             }
             return vista
-
         }
 
         override fun getItem(position: Int): Any {
@@ -103,7 +96,6 @@ class CatalogoActividades : AppCompatActivity() {
             return actividades.size
         }
     }
-
 }
 
 
