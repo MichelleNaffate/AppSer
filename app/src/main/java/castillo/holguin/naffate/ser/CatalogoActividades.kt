@@ -58,9 +58,34 @@ class CatalogoActividades : AppCompatActivity() {
             vista.txtTitulo.setText(actividades.titulo)
            // vista.imagen.setImageResource(actividades.imagen)
             vista.Actividad.setOnClickListener() {
-                var intent = Intent(context, HacerEjercicioActivity::class.java)
+                if (position== 0){
+                    var intent = Intent(context, HacerEjercicioActivity::class.java)
+                    context!!.startActivity(intent)
+                }else if (position==1){
+                    var intent = Intent(context, MeditarActivity::class.java)
+                    context!!.startActivity(intent)
+                }else if (position ==2){
+                    var intent = Intent(context, TrabajoSigEnfoActivity::class.java)
+                    context!!.startActivity(intent)
+                }else if (position ==3){
+                    var intent = Intent(context, YogaActivity::class.java)
+                    context!!.startActivity(intent)
+                }else if (position==4){
+                    var intent = Intent(context, SiestaRecargadoraActivity::class.java)
+                    context!!.startActivity(intent)
+                }else if (position==5){
+                    var intent = Intent(context, respirar::class.java)
+                    context!!.startActivity(intent)
+                }else if (position==6){
+                    var intent = Intent(context, sientate_piensa::class.java)
+                    context!!.startActivity(intent)
+                }else if (position==7){
+                    var intent = Intent(context, elongar::class.java)
+                    context!!.startActivity(intent)
+                }
 
-                context!!.startActivity(intent)
+
+
             }
             return vista
 
