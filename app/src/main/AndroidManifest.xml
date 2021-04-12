@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ser">
-        <activity android:name=".SiestaRecargadoraActivity"></activity>
+        <activity android:name=".Recomendaciones2"></activity>
+        <activity android:name=".SiestaRecargadoraActivity" />
         <activity android:name=".YogaActivity" />
         <activity android:name=".TrabajoSigEnfoActivity" />
         <activity android:name=".MeditarActivity" />

@@ -12,14 +12,14 @@ import kotlinx.android.synthetic.main.contenido.view.*
 
 class respirar : AppCompatActivity(){
 
-    var adapter: respirar.EjerciciosAdapter? = null
+    var adapter: EjerciciosAdapter? = null
     var ejercicios = ArrayList<Contenido>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.respirar)
         cargarEjercicios()
-        adapter = respirar.EjerciciosAdapter(ejercicios, this)
+        adapter = EjerciciosAdapter(ejercicios, this)
         gridviewSiestaRecargadora.adapter = adapter
     }
 
