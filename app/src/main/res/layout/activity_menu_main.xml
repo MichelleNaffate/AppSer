@@ -9,12 +9,30 @@
     android:padding="30dp"
     tools:context=".MenuMain">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/solecito" />
+
+    <TextView
+        android:id="@+id/txtTitulo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        app:srcCompat="@drawable/solecito" />
+        android:text="@string/titulo"
+        android:layout_marginTop="220dp"
+        android:gravity="center"
+        android:textColor="@color/degradadoNaranja"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btnIniciarSesion"
@@ -24,7 +42,8 @@
         android:layout_gravity="center_horizontal"
         android:background="@drawable/round_azul_button"
         android:text="@string/iniciar_sesion"
-        android:textColor="@color/black" />
+        android:textAllCaps="false"
+        android:textColor="@color/letraOscura" />
 
     <Button
         android:id="@+id/btnRediRegistrarse"
@@ -34,7 +53,8 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/btnFuerte"
         android:text="@string/btn_registrarse"
-        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textColor="@color/letraOscura"
         app:cornerRadius="40dp" />
 
 
