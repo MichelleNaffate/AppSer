@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ser">
-        <activity android:name=".Recomendaciones2"></activity>
+        <activity android:name=".HabitoTrabajarActivity"></activity>
+        <activity android:name=".UsuarioActivity" />
+        <activity android:name=".RitualMatutinoActivity" />
+        <activity android:name=".SientatePiensaActivity" />
+        <activity android:name=".ElongarActivity" />
+        <activity android:name=".RespirarActivity" />
+        <activity android:name=".RecomendacionesActivity" />
+        <activity android:name=".Recomendaciones2" />
         <activity android:name=".SiestaRecargadoraActivity" />
         <activity android:name=".YogaActivity" />
         <activity android:name=".TrabajoSigEnfoActivity" />

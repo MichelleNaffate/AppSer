@@ -7,7 +7,8 @@
     android:orientation="vertical"
     android:padding="40dp"
     android:background="@color/fondo"
-    tools:context=".Recomendaciones2">
+    tools:context=".RecomendacionesActivity">
+
     <TextView
         android:id="@+id/titulo"
         android:layout_width="330dp"
@@ -38,4 +39,5 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/box"/>
+
 </LinearLayout>

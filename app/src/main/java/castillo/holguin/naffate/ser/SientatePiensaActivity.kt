@@ -1,32 +1,30 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_siesta_recargadora.*
+import kotlinx.android.synthetic.main.activity_sientate_piensa.*
 import kotlinx.android.synthetic.main.contenido.view.*
 
-class respirar : AppCompatActivity(){
+class SientatePiensaActivity : AppCompatActivity() {
 
-    var adapter: EjerciciosAdapter? = null
+    var adapter: SientatePiensaActivity.EjerciciosAdapter? = null
     var ejercicios = ArrayList<Contenido>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.respirar)
+        setContentView(R.layout.activity_sientate_piensa)
         cargarEjercicios()
-        adapter = EjerciciosAdapter(ejercicios, this)
-        gridviewSiestaRecargadora.adapter = adapter
+        adapter = SientatePiensaActivity.EjerciciosAdapter(ejercicios, this)
+        gridviewSientatePiensa.adapter = adapter
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("Respiración Energizante", "Como una taza de café, ¡Pero solo te toma 30 segundos!","1 min"))
-        ejercicios.add(Contenido("Respiración Relajante","Un ejercicio de respiración para ayudar a relajarte","1 min"))
-        ejercicios.add(Contenido("Medita con tu Respiración","Respira con tu respiración como un Maestro Zen","1 min"))
+        ejercicios.add(Contenido("Moldea tu Mente", "Reprograma tu realidad","5 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="40dp"
     android:background="@color/fondo"
-    tools:context=".respirar">
+    tools:context=".SientatePiensaActivity">
 
     <TextView
         android:id="@+id/titulo"
@@ -15,12 +15,12 @@
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:text="@string/respirar"
+        android:text="@string/sientate_y_piensa"
         android:textColor="@color/titulos"
         android:textSize="30sp" />
 
     <GridView
-        android:id="@+id/dridviewRespirar"
+        android:id="@+id/gridviewSientatePiensa"
         android:layout_width="match_parent"
         android:layout_height="487dp"
         android:numColumns="1"

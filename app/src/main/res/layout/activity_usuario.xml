@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/fondo"
-    tools:context=".usuario">
+    tools:context=".UsuarioActivity">
 
     <ImageView
         android:id="@+id/imageView5"
@@ -60,6 +59,7 @@
         android:textColor="@color/white"
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
+
     <Button
         android:id="@+id/btnAjustes"
         android:layout_width="230dp"
@@ -72,6 +72,7 @@
         android:textColor="@color/white"
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
+
     <Button
         android:id="@+id/btnAyuda"
         android:layout_width="230dp"
@@ -84,6 +85,7 @@
         android:textColor="@color/white"
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
+
     <Button
         android:id="@+id/btnCerrarSesion"
         android:layout_width="190dp"
@@ -106,4 +108,5 @@
         android:text="@string/titulo"
         android:textSize="30sp"
         android:textColor="@color/titulos"/>
+
 </LinearLayout>

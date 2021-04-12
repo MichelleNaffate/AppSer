@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/fondo"
-    tools:context=".ritual_matutino">
+    tools:context=".RitualMatutinoActivity">
 
     <ImageView
         android:id="@+id/imageViewRecomendaciones"
@@ -104,15 +104,15 @@
                 android:textSize="17sp"
                 android:textColor="@color/titulos"/>
 
-                <Button
-                    android:id="@+id/btnCorrer"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="50dp"
-                    android:text="@string/objetivo"
-                    android:backgroundTint="@color/btnFuerte"
-                    app:cornerRadius="40dp"
-                    android:textAllCaps="false"/>
+            <Button
+                android:id="@+id/btnCorrer"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="50dp"
+                android:text="@string/objetivo"
+                android:backgroundTint="@color/btnFuerte"
+                app:cornerRadius="40dp"
+                android:textAllCaps="false"/>
         </TableRow>
     </TableLayout>
 

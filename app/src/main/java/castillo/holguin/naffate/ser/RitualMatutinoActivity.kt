@@ -1,11 +1,11 @@
 package castillo.holguin.naffate.ser
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 
-class usuario : AppCompatActivity() {
+class RitualMatutinoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.usuario)
+        setContentView(R.layout.activity_ritual_matutino)
     }
 }

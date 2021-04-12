@@ -1,30 +1,30 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_siesta_recargadora.*
+import kotlinx.android.synthetic.main.activity_elongar.*
 import kotlinx.android.synthetic.main.contenido.view.*
 
-class sientate_piensa : AppCompatActivity(){
+class ElongarActivity : AppCompatActivity() {
 
-    var adapter: sientate_piensa.EjerciciosAdapter? = null
+    var adapter: ElongarActivity.EjerciciosAdapter? = null
     var ejercicios = ArrayList<Contenido>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.sientate_piensa)
+        setContentView(R.layout.activity_elongar)
         cargarEjercicios()
-        adapter = sientate_piensa.EjerciciosAdapter(ejercicios, this)
-        gridviewSiestaRecargadora.adapter = adapter
+        adapter = ElongarActivity.EjerciciosAdapter(ejercicios, this)
+        gridviewElongar.adapter = adapter
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("Modela tu mente", "Reporgrama tu Realidad","5 min"))
+        ejercicios.add(Contenido("10 Minutos para Empezar a Estirarte", "Flexibilidad diaria","10 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {
