@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:layout_marginBottom="40dp"
         android:text="@string/registrate"
         android:textColor="@color/titulos"
@@ -26,8 +26,11 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/nombre_de_usuario"
+        android:textColorHint="@color/cafecito"
+        android:textColorHighlight="@color/cafecito"
         android:inputType="text"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:textColor="@color/titulos"/>
 
     <EditText
         android:id="@+id/edit_emailNuevo"
@@ -35,8 +38,11 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/correo_elecetronico"
+        android:textColorHint="@color/cafecito"
+        android:textColorHighlight="@color/cafecito"
         android:inputType="textEmailAddress"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:textColor="@color/titulos"/>
 
     <EditText
         android:id="@+id/edit_contraNueva"
@@ -44,8 +50,11 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/contrasenia"
+        android:textColorHint="@color/cafecito"
+        android:textColorHighlight="@color/cafecito"
         android:inputType="textPassword"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:textColor="@color/titulos"/>
 
     <EditText
         android:id="@+id/edit_contraConfNueva"
@@ -53,8 +62,11 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/confirmar_contrasenia"
+        android:textColorHint="@color/cafecito"
+        android:textColorHighlight="@color/cafecito"
         android:inputType="textPassword"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:textColor="@color/titulos"/>
 
     <CheckBox
         android:id="@+id/check_terms"
@@ -62,7 +74,8 @@
         android:layout_height="wrap_content"
         android:text="@string/terms"
         android:layout_marginTop="15dp"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        android:textColor="@color/titulos"/>
 
     <Button
         android:id="@+id/btnRegistrarse"

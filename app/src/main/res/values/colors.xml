@@ -15,4 +15,6 @@
     <color name="titulos">#956c3b</color>
     <color name="letraOscura">#1b1b1b</color>
     <color name="degradadoNaranja">#f39542</color>
+    <color name="grisClaro">#777D85</color>
+    <color name="cafecito">#A07441</color>
 </resources>

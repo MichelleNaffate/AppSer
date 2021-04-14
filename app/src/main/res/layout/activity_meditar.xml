@@ -21,15 +21,22 @@
     <GridView
         android:id="@+id/gridviewMeditar"
         android:layout_width="match_parent"
-        android:layout_height="540dp"
+        android:layout_height="560dp"
         android:numColumns="1"
         android:padding="20dp" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="100dp"
-        android:layout_height="115dp"
-        android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/solecito" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="-30dp">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/solecito" />
+
+    </LinearLayout>
 
 </LinearLayout>

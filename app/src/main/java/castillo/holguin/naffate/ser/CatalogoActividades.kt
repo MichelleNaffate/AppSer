@@ -30,13 +30,13 @@ class CatalogoActividades : AppCompatActivity() {
     }
     fun cargaractividades() {
         actividades.add(Actividades("Hacer ejercicio", R.drawable.hacer_ejercicio))
-        actividades.add(Actividades("Meditar", R.drawable.hacer_ejercicio))
-        actividades.add(Actividades("Trabajo significativo \ny enfocado", R.drawable.hacer_ejercicio))
-        actividades.add(Actividades("Yoga", R.drawable.hacer_ejercicio))
-        actividades.add(Actividades("Siesta \n recargadora", R.drawable.hacer_ejercicio))
-        actividades.add(Actividades("Respira", R.drawable.hacer_ejercicio))
-        actividades.add(Actividades("Sientate y piensa", R.drawable.hacer_ejercicio))
-        actividades.add(Actividades("Elongar", R.drawable.hacer_ejercicio))
+        actividades.add(Actividades("Meditar", R.drawable.meditar))
+        actividades.add(Actividades("Trabajo significativo \ny enfocado", R.drawable.trabajo))
+        actividades.add(Actividades("Yoga", R.drawable.yoga))
+        actividades.add(Actividades("Siesta \n recargadora", R.drawable.siesta))
+        actividades.add(Actividades("Respira", R.drawable.respira))
+        actividades.add(Actividades("Sientate y piensa", R.drawable.piensa))
+        actividades.add(Actividades("Elongar", R.drawable.enlogar))
          }
 
     class ActividadesAdapter : BaseAdapter {
@@ -53,7 +53,7 @@ class CatalogoActividades : AppCompatActivity() {
             var inflator = context!!.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var vista = inflator.inflate(R.layout.activity_actividades, null)
             vista.txtTitulo.setText(actividades.titulo)
-           // vista.imagen.setImageResource(actividades.imagen)
+            vista.imagen.setImageResource(actividades.imagen)
             vista.Actividad.setOnClickListener() {
                 if (position== 0){
                     var intent = Intent(context, HacerEjercicioActivity::class.java)

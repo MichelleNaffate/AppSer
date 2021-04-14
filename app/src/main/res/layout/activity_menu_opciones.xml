@@ -13,7 +13,8 @@
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
-        app:srcCompat="@drawable/ic_baseline_person_24" />
+        app:srcCompat="@drawable/ic_baseline_person_24"
+        app:tint="@color/black" />
 
     <TextView
         android:id="@+id/titulo"
@@ -73,6 +74,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="65dp"
         android:text="@string/tus_rutinas"
+        android:textColor="@color/grisClaro"
         android:textSize="17sp" />
     <TextView
         android:id="@+id/hoy"
@@ -81,7 +83,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="185dp"
         android:text="@string/hoy"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:textColor="@color/grisClaro"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -104,7 +107,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:text="@string/hora" />
+            android:text="@string/hora"
+            android:textColor="@color/grisClaro"/>
 
     </LinearLayout>
     <Button
@@ -114,7 +118,7 @@
         android:layout_gravity="right"
         android:layout_marginTop="0dp"
         android:layout_marginRight="20dp"
-        android:backgroundTint="@color/btnFuerte"
+        android:backgroundTint="@color/titulos"
         android:text="@string/ritual_matutino"
         android:textColor="@color/white"
         app:cornerRadius="40dp"

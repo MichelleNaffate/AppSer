@@ -31,14 +31,23 @@
         android:layout_width="match_parent"
         android:layout_height="560dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:numColumns="2" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="-30dp">
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/solecito" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="100dp"
-        android:layout_height="115dp"
-        android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/solecito" />
+    </LinearLayout>
+
+
 
 </LinearLayout>

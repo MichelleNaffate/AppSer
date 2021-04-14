@@ -15,19 +15,19 @@
     android:background="@color/fondo"
     tools:context=".Actividades">
 
+
     <RelativeLayout
         android:id="@+id/Actividad"
         android:layout_width="match_parent"
         android:layout_height="112dp"
-
         android:background="@color/btnFuerte">
-        <!--
+
         <ImageView
             android:id="@+id/imagen"
-            android:layout_width="250dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="-35dp"
-            android:src="@drawable/hacer_ejercicio" /> -->
+            android:layout_width="800dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/hacer_ejercicio"
+            app:cornerRadius="20dp"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
