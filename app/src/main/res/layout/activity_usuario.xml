@@ -8,29 +8,22 @@
     android:background="@color/fondo"
     tools:context=".UsuarioActivity">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
-
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-45dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
-        android:layout_marginBottom="40dp"
         android:text="@string/nombre_usuario"
+        android:textStyle="bold"
         android:textColor="@color/titulos"
         android:textSize="30sp" />
 
     <ImageView
         android:layout_width="160dp"
         android:layout_height="160dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/usuario"
         android:layout_gravity="center_horizontal"/>
 
@@ -107,6 +100,7 @@
         android:layout_marginTop="55dp"
         android:text="@string/titulo"
         android:textSize="30sp"
+        android:textStyle="bold"
         android:textColor="@color/titulos"/>
 
 </LinearLayout>

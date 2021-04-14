@@ -15,16 +15,16 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:text="@string/elongar"
+        android:layout_marginTop="30dp"
         android:textColor="@color/titulos"
-        android:textSize="30sp" />
+        android:textSize="30sp"/>
 
     <GridView
         android:id="@+id/gridviewElongar"
         android:layout_width="match_parent"
         android:layout_height="540dp"
         android:numColumns="1"
-        android:padding="20dp" />
-
+        android:padding="20dp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"

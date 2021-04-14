@@ -9,12 +9,31 @@
     android:background="@color/fondo"
     tools:context=".RitualMatutinoActivity">
 
-    <ImageView
-        android:id="@+id/imageViewRecomendaciones"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/imageViewRecomendaciones"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/recomendaciones"/>
+
+        <TextView
+        android:id="@+id/titulo"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/recomendaciones"/>
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="@string/ritual_matutino"
+        android:textColor="@color/btnClaro"
+        android:textSize="30sp" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/linearLayoutHabitos"
@@ -39,6 +58,7 @@
             android:text="@string/hoy"
             android:textColor="@color/titulos"
             android:textSize="17sp"/>
+
     </LinearLayout>
 
     <TableLayout
@@ -73,14 +93,15 @@
 
             <Button
                 android:id="@+id/btnObjetivoAgua"
-                android:layout_width="match_parent"
+                android:layout_width="64dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="50dp"
-                android:text="@string/objetivo"
+                android:layout_marginRight="10dp"
                 android:backgroundTint="@color/btnFuerte"
-                app:cornerRadius="40dp"
+                android:text="@string/objetivo"
                 android:textAllCaps="false"
-                android:layout_marginRight="10dp"/>
+                android:textColor="@color/white"
+                app:cornerRadius="40dp" />
         </TableRow>
 
         <TableRow
@@ -107,14 +128,16 @@
 
             <Button
                 android:id="@+id/btnCorrer"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_marginStart="50dp"
-                android:text="@string/objetivo"
                 android:backgroundTint="@color/btnFuerte"
-                app:cornerRadius="40dp"
-                android:textAllCaps="false"/>
+                android:text="@string/objetivo"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="40dp" />
         </TableRow>
+
     </TableLayout>
 
     <LinearLayout
@@ -130,4 +153,5 @@
             app:srcCompat="@drawable/solecito" />
 
     </LinearLayout>
+
 </LinearLayout>

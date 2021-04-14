@@ -17,6 +17,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginBottom="40dp"
         android:text="@string/registrate"
+        android:textStyle="bold"
         android:textColor="@color/titulos"
         android:textSize="30sp" />
 
@@ -26,10 +27,11 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/nombre_de_usuario"
+        android:textStyle="italic"
         android:textColorHint="@color/cafecito"
         android:textColorHighlight="@color/cafecito"
         android:inputType="text"
-        android:layout_marginTop="15dp"
+
         android:textColor="@color/titulos"/>
 
     <EditText
@@ -38,6 +40,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/correo_elecetronico"
+        android:textStyle="italic"
         android:textColorHint="@color/cafecito"
         android:textColorHighlight="@color/cafecito"
         android:inputType="textEmailAddress"
@@ -61,6 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:textStyle="italic"
         android:hint="@string/confirmar_contrasenia"
         android:textColorHint="@color/cafecito"
         android:textColorHighlight="@color/cafecito"
@@ -82,18 +86,25 @@
         android:layout_width="200dp"
         android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="15dp"
         app:cornerRadius="40dp"
         android:backgroundTint="@color/btnFuerte"
         android:text="@string/btn_registrarse"
-        android:textColor="@color/black" />
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="100dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="120dp"
-        app:srcCompat="@drawable/solecito" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/solecito" />
+    </LinearLayout>
 
 </LinearLayout>

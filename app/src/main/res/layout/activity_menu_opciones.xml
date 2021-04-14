@@ -25,8 +25,9 @@
         android:gravity="center"
         android:layout_marginBottom="40dp"
         android:text="@string/titulo"
+        android:textStyle="bold"
         android:textColor="@color/titulos"
-        android:textSize="30sp" />
+        android:textSize="40sp" />
 
     <Button
         android:id="@+id/btnHabitoTrabajar"
@@ -90,7 +91,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="8dp"
-
         android:orientation="horizontal">
 
         <ImageView

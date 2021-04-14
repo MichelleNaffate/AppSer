@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:text="@string/cosas_que_puedes_controlar"
         android:textColor="@color/titulos"
         android:textSize="20sp" />
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/tu_rutina_de_suenio"
         android:textColor="@color/letraOscura"
         android:textSize="15sp" />
@@ -113,19 +113,21 @@
 
     <Button
         android:id="@+id/btnContinuar"
-        android:layout_width="200dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/round_naranja_button"
-
+        android:backgroundTint="@color/btnFuerte"
+        app:cornerRadius="40dp"
         android:text="@string/btn_Continuar"
-        android:textColor="@color/black" />
+        android:textAllCaps="false"
+        android:textColor="@color/white"/>
+
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:layout_marginTop="100dp">
+    android:layout_marginTop="60dp">
 
     <ImageView
         android:id="@+id/imageView2"

@@ -36,7 +36,7 @@ class CatalogoActividades : AppCompatActivity() {
         actividades.add(Actividades("Siesta \n recargadora", R.drawable.siesta))
         actividades.add(Actividades("Respira", R.drawable.respira))
         actividades.add(Actividades("Sientate y piensa", R.drawable.piensa))
-        actividades.add(Actividades("Elongar", R.drawable.enlogar))
+        actividades.add(Actividades("Elongar", R.drawable.elongar))
          }
 
     class ActividadesAdapter : BaseAdapter {

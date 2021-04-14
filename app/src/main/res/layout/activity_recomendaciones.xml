@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="40dp"
     android:background="@color/fondo"
     tools:context=".RecomendacionesActivity">
 
@@ -15,6 +14,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
+        android:layout_marginTop="30dp"
         android:text="@string/recomendaciones"
         android:textColor="@color/titulos"
         android:textSize="30sp" />
@@ -39,5 +39,19 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/box"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/solecito" />
+    </LinearLayout>
 
 </LinearLayout>

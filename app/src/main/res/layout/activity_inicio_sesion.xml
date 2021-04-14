@@ -17,6 +17,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginBottom="40dp"
         android:text="@string/iniciar_sesion"
+        android:textStyle="bold"
         android:textColor="@color/titulos"
         android:textSize="30sp" />
 
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/nombre_de_usuario"
+        android:textStyle="italic"
         android:textColorHint="@color/cafecito"
         android:textColorHighlight="@color/cafecito"
         android:inputType="text"
@@ -42,6 +44,7 @@
         android:textColorHighlight="@color/cafecito"
         android:inputType="textEmailAddress"
         android:layout_marginTop="15dp"
+        android:textStyle="italic"
         android:textColor="@color/titulos"/>
 
     <EditText
@@ -50,6 +53,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:hint="@string/contrasenia"
+        android:textStyle="italic"
         android:textColorHint="@color/cafecito"
         android:textColorHighlight="@color/cafecito"
         android:inputType="textPassword"
@@ -64,15 +68,15 @@
         android:layout_marginTop="70dp"
         android:backgroundTint="@color/btnFuerte"
         android:text="@string/btn_acceder"
-        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         app:cornerRadius="40dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        >
+        android:layout_marginTop="60dp">
 
         <ImageView
             android:id="@+id/imageView3"

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="150dp"
-    android:layout_height="140dp"
+    android:layout_height="136dp"
     android:orientation="vertical"
     android:layout_marginLeft="15dp"
     app:cardCornerRadius="20dp"
@@ -12,25 +12,23 @@
     android:layout_marginRight="20dp"
     app:layout_goneMarginLeft="20dp"
     app:cardUseCompatPadding="true"
-    android:background="@color/fondo"
     tools:context=".Actividades">
-
 
     <RelativeLayout
         android:id="@+id/Actividad"
-        android:layout_width="match_parent"
-        android:layout_height="112dp"
+        android:layout_width="165dp"
+        android:layout_height="140dp"
         android:background="@color/btnFuerte">
 
         <ImageView
             android:id="@+id/imagen"
-            android:layout_width="800dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/hacer_ejercicio"
-            app:cornerRadius="20dp"/>
+            app:cornerRadius="20dp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
@@ -50,7 +48,6 @@
         </LinearLayout>
 
     </RelativeLayout>
-
 
 </androidx.cardview.widget.CardView>
 

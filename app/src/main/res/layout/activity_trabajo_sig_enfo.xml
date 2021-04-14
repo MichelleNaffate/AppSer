@@ -14,7 +14,7 @@
         android:layout_height="70dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/trabajo_sig_enfo"
         android:textColor="@color/titulos"
         android:textSize="30sp" />

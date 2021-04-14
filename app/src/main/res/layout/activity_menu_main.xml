@@ -55,7 +55,7 @@
         android:backgroundTint="@color/btnFuerte"
         android:text="@string/btn_registrarse"
         android:textAllCaps="false"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/white"
         app:cornerRadius="40dp" />
 
 
