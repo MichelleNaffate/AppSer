@@ -34,7 +34,7 @@
 
     <!-- PANTALLA REGISTRO/INICIO DE SESION -->
     <string name="btn_registrarse">Registrarse</string>
-    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="nombre_de_usuario">Nombre de usuario o correo</string>
     <string name="correo_elecetronico">Correo electrónico</string>
     <string name="contrasenia">Contraseña</string>
     <string name="confirmar_contrasenia">Confirmar contraseña</string>
