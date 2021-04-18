@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo"
+    android:background="@drawable/degradado"
     android:paddingTop="30dp"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
@@ -131,7 +131,7 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="100dp"
+        android:layout_width="350dp"
         android:layout_height="115dp"
         app:srcCompat="@drawable/solecito" />
 </LinearLayout>
