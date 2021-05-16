@@ -81,16 +81,16 @@
 
     <Button
         android:id="@+id/btnCerrarSesion"
-        android:layout_width="190dp"
+        android:layout_width="232dp"
         android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="1dp"
         android:backgroundTint="@color/btnFuerte"
-        android:textSize="15sp"
         android:text="@string/cerrar_sesion"
+        android:textAllCaps="false"
         android:textColor="@color/white"
-        app:cornerRadius="40dp"
-        android:textAllCaps="false"/>
+        android:textSize="15sp"
+        app:cornerRadius="40dp" />
 
     <TextView
         android:id="@+id/textviewFooter"

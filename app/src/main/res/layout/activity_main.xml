@@ -11,6 +11,7 @@
     android:paddingRight="30dp"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/txt1"
         android:layout_width="match_parent"
@@ -125,8 +126,7 @@
 
 <LinearLayout
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
+    android:layout_height="wrap_content"
     android:layout_marginTop="60dp">
 
     <ImageView
@@ -134,6 +134,7 @@
         android:layout_width="350dp"
         android:layout_height="115dp"
         app:srcCompat="@drawable/solecito" />
+
 </LinearLayout>
 
 </LinearLayout>

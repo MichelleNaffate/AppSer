@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/fondo"
-    tools:context=".RecomendacionesActivity">
+    tools:context=".RecordatoriosActivity">
 
     <TextView
         android:id="@+id/titulo"
@@ -15,48 +15,40 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:layout_marginTop="30dp"
-        android:text="@string/recomendaciones"
+        android:text="@string/recordatorios"
         android:textColor="@color/titulos"
         android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent">
+
+        <GridView
+            android:id="@+id/gridviewMetas"
+            android:layout_width="match_parent"
+            android:layout_height="454dp"
+            android:numColumns="1"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAgregarNota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="@color/degradadoNaranja"
+            android:src="@drawable/ic_baseline_add_24" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:paddingLeft="35dp"
-            android:paddingRight="30dp"
-            android:text="@string/libros"
-            android:textColor="@color/degradadoNaranja"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/linea1"
-            android:layout_width="230dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/linea" />
-
-    </LinearLayout>
-
-    <GridView
-        android:id="@+id/gridviewRecomendaciones"
-        android:layout_width="match_parent"
-        android:layout_height="510dp"
-        android:numColumns="1"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginTop="-30dp">
+        android:layout_marginTop="-110dp">
 
         <ImageView
             android:id="@+id/imageView3"

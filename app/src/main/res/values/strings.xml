@@ -48,15 +48,15 @@
 
     <!-- PANTALLA HABITO A TRABAJAR -->
     <string name="bebe_agua">Bebe agua</string>
-    <string name="hazlo_3_veces_esta_semana_para_lograrlo">Hazlo 3 veces esta semana para lograrlo</string>
+    <string name="hazlo_3_veces_esta_semana_para_lograrlo">Hazlo 3 veces esta semana para lograrlo.</string>
     <string name="has_comlpetado_este_objetivo_hoy">¡Has completado este objetivo hoy!</string>
     <string name="motivador">Motivador</string>
-    <string name="el_experimento_secreto">El experimento secreto que puede hacerte beber mas agua</string>
+    <string name="el_experimento_secreto">El experimento secreto que puede hacerte beber más agua.</string>
     <string name="leer_mas">Leer más</string>
     <string name="empieza_donde_estas">Empieza donde estás.</string>
     <string name="usa_lo_que_tienes">Usa lo que tienes.</string>
     <string name="haz_lo_que_puedas">Haz lo que puedas.</string>
-    <string name="artur_ashse">Artur Ashe</string>
+    <string name="artur_ashse">Artur Ashe.</string>
     <string name="btn_compartir_cita">Compartir cita</string>
 
     <!-- PANTALLA HACER EJERCICIO -->
@@ -138,6 +138,9 @@
     <string name="objetivo">Objetivo</string>
     <string name="habitos">Hábitos</string>
 
+    <!-- PANTALLA RECOMENDACIONES -->
+    <string name="libros">Libros</string>
+
     <!-- PANTALLA USUARIO -->
     <string name="nombre_usuario">Erika</string>
     <string name="recordatorios">Recordatorios</string>
@@ -145,4 +148,6 @@
     <string name="ajustes">Ajustes</string>
     <string name="ayuda">Ayuda</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="title_activity_main2">MainActivity</string>
+
 </resources>

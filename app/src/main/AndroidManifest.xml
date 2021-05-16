@@ -9,21 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ser">
-        <activity android:name=".HabitoTrabajarActivity"></activity>
+        <activity
+            android:name=".MainActivity2"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.Ser.NoActionBar"></activity>
+        <activity android:name=".MetasActivity" />
+        <activity android:name=".RecordatoriosActivity" />
+        <activity android:name=".HabitoTrabajarActivity" />
         <activity android:name=".UsuarioActivity" />
         <activity android:name=".RitualMatutinoActivity" />
         <activity android:name=".SientatePiensaActivity" />
         <activity android:name=".ElongarActivity" />
         <activity android:name=".RespirarActivity" />
         <activity android:name=".RecomendacionesActivity" />
-        <activity android:name=".Recomendaciones2" />
         <activity android:name=".SiestaRecargadoraActivity" />
         <activity android:name=".YogaActivity" />
         <activity android:name=".TrabajoSigEnfoActivity" />
         <activity android:name=".MeditarActivity" />
         <activity android:name=".HacerEjercicioActivity" />
         <activity android:name=".CatalogoActividades" />
-        <activity android:name=".Actividades" />
         <activity android:name=".MenuOpciones" />
         <activity android:name=".InicioSesionActivity" />
         <activity android:name=".RegistroActivity" />
@@ -31,7 +35,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
