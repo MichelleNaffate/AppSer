@@ -21,94 +21,19 @@
         android:textColor="@color/titulos"
         android:textSize="30sp" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/box"
-        android:gravity="center_horizontal">
+    <Button
+        android:id="@+id/btnMetas"
+        android:layout_width="230dp"
+        android:layout_height="55dp"
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/txtTitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:text="@string/bebe_agua"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtDetalle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:text="@string/hazlo_3_veces_esta_semana_para_lograrlo"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/imageviewCerrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="15dp"
-            android:src="@drawable/ic_baseline_close_24" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="85dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnAgua1"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                app:srcCompat="@drawable/circle_button"
-                android:text="1"
-                android:layout_marginRight="5dp"
-                android:textColor="@color/titulos"
-                app:cornerRadius="30dp"
-                android:textStyle="bold"/>
-
-            <Button
-                android:id="@+id/btnAgua2"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                app:srcCompat="@drawable/circle_button"
-                android:text="2"
-                android:layout_marginRight="5dp"
-                android:textColor="@color/titulos"
-                app:cornerRadius="30dp"
-                android:textStyle="bold"/>
-
-            <Button
-                android:id="@+id/btnAgua3"
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                app:srcCompat="@drawable/circle_button"
-                android:text="3"
-                android:layout_marginRight="5dp"
-                android:textColor="@color/titulos"
-                app:cornerRadius="30dp"
-                android:textStyle="bold"/>
-        </LinearLayout>
-    </RelativeLayout>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/btnFuerte"
+        android:textSize="15sp"
+        android:text="@string/metas"
+        android:textColor="@color/white"
+        app:cornerRadius="40dp"
+        android:textAllCaps="false"/>
 
     <RelativeLayout
         android:id="@+id/btnMotivador"
@@ -242,17 +167,26 @@
 
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="100dp"
-            android:layout_height="115dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/solecito" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_alignParentBottom="true"
+            >
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="100dp"
+                android:layout_height="115dp"
+                android:layout_gravity="bottom"
+                app:srcCompat="@drawable/sol3" />
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

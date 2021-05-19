@@ -14,13 +14,7 @@ class UsuarioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_usuario)
 
-        btnRecordatorios.setOnClickListener {
-            var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
-            startActivity(intent)
-        }
-        btnMetas.setOnClickListener {
-            var intent : Intent = Intent(this, MetasActivity:: class.java)
-            startActivity(intent)
-        }
+
+
     }
 }

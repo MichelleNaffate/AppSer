@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "318338222623",
+    "project_id": "appser-7c10e",
+    "storage_bucket": "appser-7c10e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318338222623:android:5a66d777ceafac0e6be32a",
+        "android_client_info": {
+          "package_name": "castillo.holguin.naffate.ser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318338222623-eoqj1let4l75rcj17ogquo07fsk8q57t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEKtoP7G6IL9Awn7ymakv9YGOkhQcRzRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318338222623-eoqj1let4l75rcj17ogquo07fsk8q57t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

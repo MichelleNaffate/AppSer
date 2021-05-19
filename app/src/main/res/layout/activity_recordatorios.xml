@@ -55,7 +55,7 @@
             android:layout_width="100dp"
             android:layout_height="115dp"
             android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/solecito" />
+            app:srcCompat="@drawable/sol3" />
 
     </LinearLayout>
 

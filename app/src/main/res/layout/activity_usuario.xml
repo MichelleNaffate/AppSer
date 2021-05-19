@@ -27,38 +27,16 @@
         android:src="@drawable/usuario"
         android:layout_gravity="center_horizontal"/>
 
-    <Button
-        android:id="@+id/btnRecordatorios"
-        android:layout_width="230dp"
-        android:layout_height="55dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/btnFuerte"
-        android:textSize="15sp"
-        android:text="@string/recordatorios"
-        android:textColor="@color/white"
-        app:cornerRadius="40dp"
-        android:textAllCaps="false"/>
 
-    <Button
-        android:id="@+id/btnMetas"
-        android:layout_width="230dp"
-        android:layout_height="55dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="1dp"
-        android:backgroundTint="@color/btnFuerte"
-        android:textSize="15sp"
-        android:text="@string/metas"
-        android:textColor="@color/white"
-        app:cornerRadius="40dp"
-        android:textAllCaps="false"/>
+
+
 
     <Button
         android:id="@+id/btnAjustes"
         android:layout_width="230dp"
         android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/btnFuerte"
         android:textSize="15sp"
         android:text="@string/ajustes"

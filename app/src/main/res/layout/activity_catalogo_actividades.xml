@@ -29,25 +29,32 @@
     <GridView
         android:id="@+id/gridActividades"
         android:layout_width="match_parent"
-        android:layout_height="560dp"
+        android:layout_height="520dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:numColumns="2" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_alignParentBottom="true"
+            >
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="100dp"
+                android:layout_height="115dp"
+                android:layout_gravity="bottom"
+                app:srcCompat="@drawable/sol3" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="100dp"
-            android:layout_height="115dp"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/solecito" />
+        </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import kotlinx.android.synthetic.main.activity_menu_opciones.*
 
 class MenuOpciones : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,10 @@ class MenuOpciones : AppCompatActivity() {
 
         imagenUsuario.setOnClickListener {
             var intent : Intent = Intent(this, UsuarioActivity:: class.java)
+            startActivity(intent)
+        }
+        btnRecordatorios.setOnClickListener {
+            var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
             startActivity(intent)
         }
     }
