@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ser">
-        <activity
-            android:name=".MainActivity2"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Ser.NoActionBar"></activity>
         <activity android:name=".MetasActivity" />
         <activity android:name=".RecordatoriosActivity" />
         <activity android:name=".HabitoTrabajarActivity" />
