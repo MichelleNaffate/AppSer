@@ -29,7 +29,7 @@ class InicioSesionActivity : AppCompatActivity() {
     }
 
     private fun valida_ingreso(){
-        val et_correo: EditText = findViewById(R.id.edit_nombreUsuario)
+        val et_correo: EditText = findViewById(R.id.edit_Correo)
         val et_contra: EditText = findViewById(R.id.edit_contra)
 
         var correo: String = et_correo.text.toString()
@@ -59,4 +59,5 @@ class InicioSesionActivity : AppCompatActivity() {
                 }
             }
     }
+
 }

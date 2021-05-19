@@ -9,13 +9,13 @@
     tools:context=".UsuarioActivity">
 
     <TextView
-        android:id="@+id/titulo"
+        android:id="@+id/nombre_Usuario"
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:text="@string/nombre_usuario"
+        android:text="Erika"
         android:textStyle="bold"
         android:textColor="@color/titulos"
         android:textSize="30sp" />

@@ -27,7 +27,7 @@
             android:id="@+id/gridviewMetas"
             android:layout_width="match_parent"
             android:layout_height="454dp"
-            android:numColumns="1"
+            android:numColumns="2"
             android:paddingLeft="20dp"
             android:paddingRight="20dp" />
 
