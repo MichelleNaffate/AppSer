@@ -32,7 +32,7 @@
           android:layout_marginTop="30dp"
           android:gravity="bottom"
           android:layout_marginLeft="88dp"
-          android:text="Erika"
+          android:text="Mimi"
           android:textColor="@color/titulos"
           android:textSize="30sp"
           android:textStyle="bold" />
@@ -103,16 +103,12 @@
             android:layout_gravity="center"
             android:layout_alignParentBottom="true"
             >
-    <TextView
-        android:id="@+id/textviewFooter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="55dp"
-        android:text="@string/titulo"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/titulos"/>
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="180dp"
+                android:layout_height="150dp"
+                android:layout_gravity="bottom"
+                app:srcCompat="@drawable/logoser" />
         </LinearLayout>
     </RelativeLayout>
 
