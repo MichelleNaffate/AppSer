@@ -51,7 +51,10 @@ class UsuarioActivity : AppCompatActivity() {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
         }
-
+        btnAyuda.setOnClickListener {
+            var intent: Intent = Intent(this, ContenidoAyuda::class.java)
+            startActivity(intent)
+        }
 
     }
 

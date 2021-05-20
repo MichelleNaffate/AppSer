@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ser">
-        <activity android:name=".AjustesActivity"></activity>
+        <activity android:name=".ContenidoAyuda"></activity>
+        <activity android:name=".AjustesActivity" />
         <activity android:name=".Ajustes" />
         <activity android:name=".AgregarRecordatorio" />
         <activity android:name=".MetasActivity" />
