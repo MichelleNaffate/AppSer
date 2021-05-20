@@ -1,13 +1,16 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import kotlinx.android.synthetic.main.activity_elongar.*
 import kotlinx.android.synthetic.main.activity_meditar.*
+import kotlinx.android.synthetic.main.activity_meditar.navegar
 import kotlinx.android.synthetic.main.contenido.view.*
 
 class MeditarActivity : AppCompatActivity() {
@@ -21,6 +24,10 @@ class MeditarActivity : AppCompatActivity() {
         cargarEjercicios()
         adapter = MeditarActivity.EjerciciosAdapter(ejercicios, this)
         gridviewMeditar.adapter = adapter
+        navegar.setOnClickListener {
+            var intent: Intent = Intent(this, CatalogoActividades::class.java)
+            startActivity(intent)
+        }
     }
 
     fun cargarEjercicios() {

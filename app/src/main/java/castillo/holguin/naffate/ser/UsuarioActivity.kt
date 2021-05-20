@@ -9,7 +9,9 @@ import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_menu_opciones.*
+import kotlinx.android.synthetic.main.activity_trabajo_sig_enfo.*
 import kotlinx.android.synthetic.main.activity_usuario.*
+import kotlinx.android.synthetic.main.activity_usuario.navegar
 
 class UsuarioActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -23,27 +25,34 @@ class UsuarioActivity : AppCompatActivity() {
 
         storage = FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
+        var tv_nombre = findViewById(R.id.nombre_Usuario) as TextView
+        var Bundle = intent.extras
 
-        regresarNombreUsuario()
+        if (Bundle != null){
+            var nombre = Bundle.getString("nombre")
+
+
+            tv_nombre.setText("$nombre")
+        }
+
         btnCerrarSesion.setOnClickListener(){
             val intent: Intent = Intent(this, InicioSesionActivity::class.java)
+            startActivity(intent)
+            finishAffinity()
+        }
+
+        btnAjustes.setOnClickListener(){
+
+            val intent: Intent = Intent(this, AjustesActivity::class.java)
+            intent.putExtra("nombre",tv_nombre.text.toString())
+            startActivity(intent)
+        }
+        navegar.setOnClickListener {
+            var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
         }
 
 
     }
-    private fun regresarNombreUsuario(){
-        storage.collection("Usuarios")
-            .whereEqualTo("email",auth.currentUser?.email)
-            .get()
-            .addOnSuccessListener {
-                it.forEach {
-                    if(it.exists()){
-                        nombre = it.getString("Usuario").toString()
-                        nombre_Usuario.setText("$nombre")
-                    }
 
-                }
-            }
-    }
 }

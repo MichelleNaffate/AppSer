@@ -5,17 +5,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_menu_opciones.*
+import kotlinx.android.synthetic.main.activity_usuario.*
 
 class MenuOpciones : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+    private lateinit var storage: FirebaseFirestore
+    lateinit var nombre: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_opciones)
+
         val button: Button = findViewById(R.id.btnActividades)
         val button2: Button = findViewById(R.id.btnRecomendaciones)
         val button3: Button = findViewById(R.id.btnHabitoTrabajar)
         val button4: Button = findViewById(R.id.btnRitualMatutino)
         val imagenUsuario: ImageView = findViewById(R.id.imageViewUsuario)
+        storage = FirebaseFirestore.getInstance()
+        auth= FirebaseAuth.getInstance()
 
         button.setOnClickListener {
             var intent : Intent = Intent(this, CatalogoActividades:: class.java)
@@ -37,8 +46,26 @@ class MenuOpciones : AppCompatActivity() {
         }
 
         imagenUsuario.setOnClickListener {
-            var intent : Intent = Intent(this, UsuarioActivity:: class.java)
-            startActivity(intent)
+
+                storage.collection("Usuarios")
+                    .whereEqualTo("email",auth.currentUser?.email)
+                    .get()
+                    .addOnSuccessListener {
+                        it.forEach {
+                            if(it.exists()){
+                                nombre = it.getString("Usuario").toString()
+                                var intent : Intent = Intent(this, UsuarioActivity:: class.java)
+                                intent.putExtra("nombre","$nombre")
+                                startActivity(intent)
+
+                            }
+
+                        }
+                    }
+
+
+
+
         }
         btnRecordatorios.setOnClickListener {
             var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)

@@ -1,13 +1,16 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import kotlinx.android.synthetic.main.activity_elongar.*
 import kotlinx.android.synthetic.main.activity_trabajo_sig_enfo.*
+import kotlinx.android.synthetic.main.activity_trabajo_sig_enfo.navegar
 import kotlinx.android.synthetic.main.contenido.view.*
 
 
@@ -22,6 +25,10 @@ class TrabajoSigEnfoActivity : AppCompatActivity() {
         cargarEjercicios()
         adapter = TrabajoSigEnfoActivity.EjerciciosAdapter(ejercicios, this)
         gridviewTrabajoSigEnfo.adapter = adapter
+        navegar.setOnClickListener {
+            var intent: Intent = Intent(this, CatalogoActividades::class.java)
+            startActivity(intent)
+        }
     }
 
     fun cargarEjercicios() {

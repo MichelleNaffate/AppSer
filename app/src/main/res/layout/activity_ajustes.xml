@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo"
+    tools:context=".AjustesActivity">
+
+    <ImageView
+        android:id="@+id/navegar"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_baseline_navigate_before_24" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id ="@+id/perfil"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src = "@drawable/perfil"
+        app:civ_border_width= "2dp"
+        android:layout_marginTop="40dp"
+        app:civ_border_color="#FF000000"
+        android:layout_gravity="center_horizontal"/>
+    <Button
+        android:id="@+id/btnEditar_foto"
+        android:layout_width="100dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/btnFuerte"
+        android:textSize="15sp"
+        android:text="editar foto"
+        android:textColor="@color/white"
+        app:cornerRadius="40dp"
+        android:textAllCaps="false"/>
+
+    <EditText
+        android:id="@+id/modificar_Usuario_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:hint="Nombre de usuario"
+        android:textStyle="italic"
+        android:textColorHint="@color/cafecito"
+        android:textColorHighlight="@color/cafecito"
+        android:inputType="text"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textColor="@color/titulos"/>
+    <Button
+        android:id="@+id/btncambiarnombre_usuario"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/btnFuerte"
+        android:textSize="15sp"
+        android:text="cambiar nombre de usuario"
+        android:textColor="@color/white"
+        app:cornerRadius="40dp"
+        android:textAllCaps="false"/>
+
+
+    <Button
+        android:id="@+id/btnRecuperar_contraseña"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="90dp"
+        android:backgroundTint="@color/cafecito"
+        android:textSize="15sp"
+        android:text="cambiar Contraseña"
+        android:textColor="@color/white"
+        app:cornerRadius="40dp"
+        android:textAllCaps="false"/>
+</LinearLayout>

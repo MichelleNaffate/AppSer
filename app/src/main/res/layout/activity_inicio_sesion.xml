@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="120dp"
         android:layout_marginBottom="40dp"
         android:text="@string/iniciar_sesion"
         android:textStyle="bold"
@@ -75,10 +75,11 @@
             >
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="100dp"
-                android:layout_height="115dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                app:srcCompat="@drawable/sol3" />
+                app:srcCompat="@drawable/sol4"
+                android:contentDescription="@string/todo" />
 
         </LinearLayout>
 

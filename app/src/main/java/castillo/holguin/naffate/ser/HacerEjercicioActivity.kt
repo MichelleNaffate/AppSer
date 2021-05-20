@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import kotlinx.android.synthetic.main.activity_elongar.*
 import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
+import kotlinx.android.synthetic.main.activity_hacer_ejercicio.navegar
 import kotlinx.android.synthetic.main.contenido.view.*
 
 class HacerEjercicioActivity : AppCompatActivity() {
@@ -22,6 +24,10 @@ class HacerEjercicioActivity : AppCompatActivity() {
         cargarEjercicios()
         adapter = HacerEjercicioActivity.EjerciciosAdapter(ejercicios, this)
         gridviewHacerEjercicio.adapter = adapter
+        navegar.setOnClickListener {
+            var intent: Intent = Intent(this, CatalogoActividades::class.java)
+            startActivity(intent)
+        }
     }
 
     fun cargarEjercicios() {

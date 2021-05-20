@@ -10,16 +10,28 @@
     android:paddingTop="30dp"
     android:background="@color/fondo"
     tools:context=".HabitoTrabajarActivity">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="70dp">
+
+    <ImageView
+        android:id="@+id/navegar"
+        android:layout_width="45dp"
+        android:layout_height="55dp"
+        android:src="@drawable/ic_baseline_navigate_before_24" />
 
     <TextView
         android:id="@+id/titulo"
-        android:layout_width="330dp"
+        android:layout_width="268dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
         android:text="@string/habito_a_trabajar"
         android:textColor="@color/titulos"
         android:textSize="30sp" />
+
+</LinearLayout>
+
 
     <Button
         android:id="@+id/btnMetas"
@@ -180,10 +192,10 @@
             >
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="100dp"
-                android:layout_height="115dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                app:srcCompat="@drawable/sol3" />
+                app:srcCompat="@drawable/sol4" />
 
         </LinearLayout>
 

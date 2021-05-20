@@ -99,10 +99,10 @@
             >
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="100dp"
-                android:layout_height="115dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:layout_gravity="bottom"
-                app:srcCompat="@drawable/sol3" />
+                app:srcCompat="@drawable/sol4" />
 
         </LinearLayout>
 

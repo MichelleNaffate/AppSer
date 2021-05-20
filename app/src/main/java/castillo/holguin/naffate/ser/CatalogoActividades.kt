@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.activity_actividades.view.*
 import kotlinx.android.synthetic.main.activity_catalogo_actividades.*
+import kotlinx.android.synthetic.main.activity_elongar.*
+import kotlinx.android.synthetic.main.activity_habito_trabajar.*
 import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
 import kotlinx.android.synthetic.main.activity_siesta_recargadora.*
 import kotlinx.android.synthetic.main.contenido.view.*
@@ -27,7 +29,13 @@ class CatalogoActividades : AppCompatActivity() {
         cargaractividades()
         adapter = ActividadesAdapter(actividades, this)
         gridActividades.adapter = adapter
+
+
+
+
     }
+
+
     fun cargaractividades() {
         actividades.add(Actividades("Hacer ejercicio", R.drawable.hacer_ejercicio))
         actividades.add(Actividades("Meditar", R.drawable.meditar))
@@ -80,7 +88,9 @@ class CatalogoActividades : AppCompatActivity() {
                     var intent = Intent(context, ElongarActivity::class.java)
                     context!!.startActivity(intent)
                 }
+
             }
+
             return vista
         }
 
@@ -95,7 +105,9 @@ class CatalogoActividades : AppCompatActivity() {
         override fun getCount(): Int {
             return actividades.size
         }
+
     }
+
 }
 
 

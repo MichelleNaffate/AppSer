@@ -1,6 +1,7 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,6 +22,10 @@ class ElongarActivity : AppCompatActivity() {
         cargarEjercicios()
         adapter = ElongarActivity.EjerciciosAdapter(ejercicios, this)
         gridviewElongar.adapter = adapter
+        navegar.setOnClickListener {
+            var intent: Intent = Intent(this, CatalogoActividades::class.java)
+            startActivity(intent)
+        }
     }
 
     fun cargarEjercicios() {

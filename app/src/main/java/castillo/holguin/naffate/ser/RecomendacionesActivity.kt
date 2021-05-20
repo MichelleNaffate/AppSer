@@ -1,13 +1,16 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
 import kotlinx.android.synthetic.main.activity_recomendaciones.*
+import kotlinx.android.synthetic.main.activity_recomendaciones.navegar
 import kotlinx.android.synthetic.main.contenido_recomendaciones.view.*
 
 class RecomendacionesActivity : AppCompatActivity() {
@@ -21,6 +24,10 @@ class RecomendacionesActivity : AppCompatActivity() {
         cargarEjercicios()
         adapter = RecomendacionesActivity.EjerciciosAdapter(recomendaciones, this)
         gridviewRecomendaciones.adapter = adapter
+        navegar.setOnClickListener {
+            var intent: Intent = Intent(this, MenuOpciones::class.java)
+            startActivity(intent)
+        }
 
     }
 

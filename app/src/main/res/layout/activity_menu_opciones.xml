@@ -7,21 +7,24 @@
     android:background="@color/fondo"
     android:orientation="vertical"
     tools:context=".MenuOpciones">
-    <ImageView
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewUsuario"
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
-        app:srcCompat="@drawable/ic_baseline_person_24"
-        app:tint="@color/black" />
+        android:src = "@drawable/perfil"
+        app:civ_border_width= "2dp"
+        app:civ_border_color="#FF000000"
+        />
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="-45dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:layout_marginBottom="40dp"
         android:text="@string/titulo"
@@ -109,8 +112,8 @@
             >
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="100dp"
-                android:layout_height="115dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:layout_gravity="bottom"
                 app:srcCompat="@drawable/sol3" />
 

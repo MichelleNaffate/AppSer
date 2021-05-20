@@ -1,12 +1,14 @@
 package castillo.holguin.naffate.ser
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import kotlinx.android.synthetic.main.activity_elongar.*
 import kotlinx.android.synthetic.main.activity_yoga.*
 import kotlinx.android.synthetic.main.contenido.view.*
 
@@ -21,6 +23,10 @@ class YogaActivity : AppCompatActivity() {
         cargarEjercicios()
         adapter = YogaActivity.EjerciciosAdapter(ejercicios, this)
         gridviewYoga.adapter = adapter
+        navegar.setOnClickListener {
+            var intent: Intent = Intent(this, CatalogoActividades::class.java)
+            startActivity(intent)
+        }
     }
 
     fun cargarEjercicios() {

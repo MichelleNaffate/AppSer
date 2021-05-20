@@ -30,6 +30,10 @@ class HabitoTrabajarActivity : AppCompatActivity() {
             var intent : Intent = Intent(this, MetasActivity:: class.java)
             startActivity(intent)
         }
+        navegar.setOnClickListener{
+            var intent : Intent = Intent(this, MenuOpciones:: class.java)
+            startActivity(intent)
+        }
 
     }
 
