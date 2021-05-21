@@ -92,9 +92,9 @@
 
             <ImageView
                 android:id="@+id/imageviewAgua"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_invert_colors_24"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_gota_de_agua"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -135,9 +135,9 @@
 
             <ImageView
                 android:id="@+id/imageviewCorrer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_directions_run_24"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_silueta_de_corredor_corriendo_rapido"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -179,6 +179,7 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:elevation="5dp"
         android:backgroundTint="@color/btnFuerte"
         android:text="@string/objetivo"
         android:textAllCaps="false"

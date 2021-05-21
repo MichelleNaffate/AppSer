@@ -45,6 +45,7 @@
         android:layout_height="160dp"
         android:src = "@drawable/perfil"
         app:civ_border_width= "2dp"
+        android:elevation="8dp"
         android:layout_marginTop="30dp"
         app:civ_border_color="@color/cafecito"
 
@@ -59,6 +60,7 @@
         android:layout_marginTop="50dp"
         android:backgroundTint="@color/btnFuerte"
         android:textSize="15sp"
+        android:elevation="5dp"
         android:text="@string/ajustes"
         android:textColor="@color/white"
         app:cornerRadius="40dp"
@@ -72,6 +74,7 @@
         android:layout_marginTop="1dp"
         android:backgroundTint="@color/btnFuerte"
         android:textSize="15sp"
+        android:elevation="5dp"
         android:text="@string/ayuda"
         android:textColor="@color/white"
         app:cornerRadius="40dp"
@@ -86,6 +89,7 @@
         android:backgroundTint="@color/btnFuerte"
         android:text="@string/cerrar_sesion"
         android:textAllCaps="false"
+        android:elevation="5dp"
         android:textColor="@color/white"
         android:textSize="15sp"
         app:cornerRadius="40dp" />

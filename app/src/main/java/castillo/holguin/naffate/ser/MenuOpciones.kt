@@ -46,26 +46,33 @@ class MenuOpciones : AppCompatActivity() {
         }
 
         imagenUsuario.setOnClickListener {
-                storage.collection("Usuarios")
-                    .whereEqualTo("email",auth.currentUser?.email)
-                    .get()
-                    .addOnSuccessListener {
-                        it.forEach {
-                            if(it.exists()){
-                                nombre = it.getString("Usuario").toString()
-                                var intent : Intent = Intent(this, UsuarioActivity:: class.java)
-                                intent.putExtra("nombre","$nombre")
-                                startActivity(intent)
 
-                            }
+            storage.collection("Usuarios")
+                .whereEqualTo("email",auth.currentUser?.email)
+                .get()
+                .addOnSuccessListener {
+                    it.forEach {
+                        if(it.exists()){
+                            nombre = it.getString("Usuario").toString()
+                            var intent : Intent = Intent(this, UsuarioActivity:: class.java)
+                            intent.putExtra("nombre","$nombre")
+                            startActivity(intent)
+
 
                         }
-                    }
-        }
 
+                    }
+                }
+
+
+
+
+        }
         btnRecordatorios.setOnClickListener {
             var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
             startActivity(intent)
         }
     }
 }
+
+

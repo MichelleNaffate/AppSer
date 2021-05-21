@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/degradado"
     android:paddingTop="30dp"
+
+
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
     tools:context=".MainActivity">
@@ -17,9 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
+
         android:text="@string/cosas_que_puedes_controlar"
-        android:textColor="@color/titulos"
+        android:textColor="@color/btnFuerte"
+        android:fontFamily="@font/brillantest"
         android:textSize="20sp" />
 
     <TextView
@@ -27,9 +31,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
         android:text="@string/tu_rutina_de_suenio"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
         android:textSize="15sp" />
 
     <TextView
@@ -37,8 +42,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:textStyle="bold"
         android:text="@string/como_te_tratas_a_ti_mismo"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
         android:textSize="15sp" />
 
     <TextView
@@ -46,8 +52,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:textStyle="bold"
         android:text="@string/la_informacion_que_ves_escuchas"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
         android:textSize="15sp" />
 
     <TextView
@@ -55,8 +62,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:textStyle="bold"
         android:text="@string/lo_que_comes"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
         android:textSize="15sp" />
 
     <TextView
@@ -64,8 +72,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:textStyle="bold"
         android:text="@string/tu_mentalidad"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
         android:textSize="15sp" />
 
     <TextView
@@ -74,7 +83,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="@string/la_forma_en_la_que_tratas_a_otros"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
+        android:textStyle="bold"
         android:textSize="15sp" />
 
     <TextView
@@ -83,15 +93,17 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="@string/tu_nivel_de_honestidad"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
+        android:textStyle="bold"
         android:textSize="15sp" />
     <TextView
         android:id="@+id/txt9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:textStyle="bold"
         android:text="@string/la_informacion_que_ves_escuchas"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
         android:textSize="15sp" />
 
     <TextView
@@ -100,7 +112,8 @@
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:text="@string/tu_vision_de_la_vida"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
+        android:textStyle="bold"
         android:textSize="15sp" />
 
     <TextView
@@ -108,35 +121,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:textStyle="bold"
         android:text="@string/que_tan_rapido_te_levantas_luego_de_caer"
-        android:textColor="@color/letraOscura"
+        android:textColor="@color/cafecito"
         android:textSize="15sp" />
 
     <Button
         android:id="@+id/btnContinuar"
         android:layout_width="160dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:elevation="7dp"
+        android:layout_marginTop="60dp"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/btnFuerte"
         app:cornerRadius="40dp"
+
         android:text="@string/btn_Continuar"
         android:textAllCaps="false"
         android:textColor="@color/white"/>
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="60dp"
-    android:layout_gravity="center">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="350dp"
-        android:layout_height="115dp"
-        android:layout_gravity="center"
-        app:srcCompat="@drawable/solecito" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="350dp"
+                android:layout_height="115dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/solecito" />
 
-</LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 
 </LinearLayout>

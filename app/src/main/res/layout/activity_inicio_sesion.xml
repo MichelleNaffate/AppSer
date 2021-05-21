@@ -18,6 +18,7 @@
         android:layout_marginBottom="40dp"
         android:text="@string/iniciar_sesion"
         android:textStyle="bold"
+
         android:textColor="@color/titulos"
         android:textSize="30sp" />
 
@@ -31,7 +32,7 @@
         android:textColorHint="@color/cafecito"
         android:textColorHighlight="@color/cafecito"
         android:inputType="text"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:textColor="@color/titulos"/>
 
 
@@ -68,6 +69,7 @@
         android:layout_marginTop="70dp"
         android:backgroundTint="@color/btnFuerte"
         android:text="@string/btn_acceder"
+        android:elevation="5dp"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:cornerRadius="40dp" />

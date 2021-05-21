@@ -24,35 +24,40 @@ class UsuarioActivity : AppCompatActivity() {
         setContentView(R.layout.activity_usuario)
 
         storage = FirebaseFirestore.getInstance()
-        auth= FirebaseAuth.getInstance()
-        var tv_nombre = findViewById(R.id.nombre_Usuario) as TextView
-        var Bundle = intent.extras
+        auth = FirebaseAuth.getInstance()
 
-        if (Bundle != null){
+        var tv_nombre = findViewById(R.id.nombre_Usuario) as TextView
+
+        var Bundle = intent.extras
+        if (Bundle != null) {
             var nombre = Bundle.getString("nombre")
             tv_nombre.setText("$nombre")
+
         }
 
-        btnCerrarSesion.setOnClickListener(){
+        btnCerrarSesion.setOnClickListener() {
+            auth.signOut()
             val intent: Intent = Intent(this, InicioSesionActivity::class.java)
             startActivity(intent)
             finishAffinity()
         }
 
-        btnAjustes.setOnClickListener(){
-            val intent: Intent = Intent(this, AjustesActivity::class.java)
-            intent.putExtra("nombre",tv_nombre.text.toString())
-            startActivity(intent)
-        }
+        btnAjustes.setOnClickListener() {
 
+            val intent: Intent = Intent(this, AjustesActivity::class.java)
+            intent.putExtra("nombre", tv_nombre.text.toString())
+            startActivity(intent)
+
+
+        }
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
         }
-
         btnAyuda.setOnClickListener {
             var intent: Intent = Intent(this, ContenidoAyuda::class.java)
             startActivity(intent)
+
         }
 
     }

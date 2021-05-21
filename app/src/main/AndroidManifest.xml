@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ser">
-        <activity android:name=".ContenidoAyuda"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ContenidoAyuda" />
         <activity android:name=".AjustesActivity" />
         <activity android:name=".RecuperarPasswordActivity" />
         <activity android:name=".AgregarRecordatorio" />
@@ -34,7 +35,7 @@
         <activity android:name=".InicioSesionActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".MenuMain" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

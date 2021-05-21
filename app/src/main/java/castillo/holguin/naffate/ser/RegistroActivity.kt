@@ -31,7 +31,7 @@ class RegistroActivity : AppCompatActivity() {
 
         btn_registrar.setOnClickListener {
             valida_registro()
-            agregarUsuario()
+
 
         }
     }
@@ -61,33 +61,34 @@ class RegistroActivity : AppCompatActivity() {
 
     private fun registrarFirebase(correo: String, password: String) {
         usuario.createUserWithEmailAndPassword(correo, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        val user = usuario.currentUser
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = usuario.currentUser
 
-                        Toast.makeText(baseContext, "El usuario ${edit_nombreNuevo.text.toString()} se ha creado correctamente.",
-                                Toast.LENGTH_SHORT).show()
+                    var nombreUsuario = edit_nombreNuevo.text.toString()
+                    var correo = edit_emailNuevo.text.toString()
 
-                    } else {
-                        Toast.makeText(baseContext, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show()
-                    }
 
-                }
-    }
+                    val map = hashMapOf(
+                        "email" to "$correo",
+                        "Usuario" to "$nombreUsuario")
+                    storage.collection("Usuarios").document("$nombreUsuario")
+                        .set(map)
+                        .addOnSuccessListener {
+                            val intent: Intent = Intent(this, InicioSesionActivity::class.java)
+                            startActivity(intent) }
+                        .addOnFailureListener {  }
 
-    private fun agregarUsuario() {
-        var nombreUsuario = edit_nombreNuevo.text.toString()
-        var correo = edit_emailNuevo.text.toString()
+                    Toast.makeText(baseContext, "El usuario ${edit_nombreNuevo.text.toString()} se ha creado correctamente.",
+                        Toast.LENGTH_SHORT).show()
 
-        val map = hashMapOf(
-                "email" to "$correo",
-                "Usuario" to "$nombreUsuario")
-        storage.collection("Usuarios")
-                .add(map).addOnSuccessListener {
-                    val intent: Intent = Intent(this, InicioSesionActivity::class.java)
-                    startActivity(intent)
+                } else {
+                    Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
                 }
 
+            }
     }
-}
+    }
+
+

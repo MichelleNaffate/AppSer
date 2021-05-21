@@ -10,39 +10,35 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_width="354dp"
+        android:layout_height="120dp"
         android:layout_marginLeft="20dp"
-        android:orientation="horizontal">
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="210dp"
-            android:fontFamily="sans-serif-condensed"
-            android:paddingLeft="10dp"
-            android:text="Inicio"
-            android:textColor="@color/cafecito"
-            android:textSize="17sp"
-            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageVie"
+            android:layout_width="110dp"
+            android:layout_height="140dp"
+            android:layout_gravity="bottom"
+            app:srcCompat="@drawable/logoser" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageViewUsuario"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:src = "@drawable/perfil"
-        app:civ_border_width= "1.5dp"
-        app:civ_border_color="@color/cafecito" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewUsuario"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:src="@drawable/perfil"
+            android:elevation="6dp"
+
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="160dp"
+            app:civ_border_color="@color/cafecito"
+            app:civ_border_width="1.5dp" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/linea1"
-        android:layout_width="500dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/linea" />
+
 
     <TextView
         android:id="@+id/titulo"
@@ -65,6 +61,8 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/btnFuerte"
         android:textSize="15sp"
+        android:elevation="5dp"
+        android:stateListAnimator="@anim/nav_default_pop_enter_anim"
         android:text="@string/habito_a_trabajar"
         android:textColor="@color/white"
         app:cornerRadius="40dp"
@@ -76,6 +74,8 @@
         android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        android:stateListAnimator="@anim/nav_default_pop_enter_anim"
         android:backgroundTint="@color/btnFuerte"
         android:text="@string/actividades"
         android:textColor="@color/white"
@@ -91,17 +91,20 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/btnFuerte"
         android:textSize="15sp"
+        android:elevation="5dp"
+        android:stateListAnimator="@anim/nav_default_pop_enter_anim"
         android:text="@string/recomendaciones"
         android:textColor="@color/white"
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
-
     <Button
         android:id="@+id/btnRecordatorios"
         android:layout_width="230dp"
         android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
+        android:elevation="5dp"
+        android:stateListAnimator="@anim/nav_default_pop_enter_anim"
         android:backgroundTint="@color/btnFuerte"
         android:textSize="15sp"
         android:text="@string/recordatorios"
@@ -109,39 +112,23 @@
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
 
+
+
     <Button
         android:id="@+id/btnRitualMatutino"
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_gravity="right"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="70dp"
+        android:elevation="6dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="@color/titulos"
         android:text="@string/ritual_matutino"
         android:textColor="@color/white"
         app:cornerRadius="40dp"
-        android:textAllCaps="false" />
+        android:textAllCaps="false"
+        />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_alignParentBottom="true">
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="80dp"
-                android:layout_height="60dp"
-                android:layout_gravity="bottom"
-                app:srcCompat="@drawable/sol3" />
-
-        </LinearLayout>
-
-    </RelativeLayout>
 
 </LinearLayout>

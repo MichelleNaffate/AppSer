@@ -53,6 +53,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="30dp"
+            android:elevation="5dp"
             android:layout_marginBottom="100dp"
             android:backgroundTint="@color/degradadoNaranja"
             android:src="@drawable/ic_baseline_add_24" />

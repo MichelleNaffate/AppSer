@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
 class MetasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.contenido_metas)
+        setContentView(R.layout.activity_metas)
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, HabitoTrabajarActivity::class.java)
             startActivity(intent)

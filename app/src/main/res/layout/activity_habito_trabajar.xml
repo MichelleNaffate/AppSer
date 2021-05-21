@@ -37,7 +37,7 @@
         android:id="@+id/btnMetas"
         android:layout_width="230dp"
         android:layout_height="55dp"
-
+        android:elevation="5dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60dp"
         android:backgroundTint="@color/btnFuerte"
@@ -91,7 +91,7 @@
             android:layout_height="55dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_emoji_objects_24" />
+            android:src="@drawable/ic_bombilla" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -107,6 +107,7 @@
                 android:layout_height="match_parent"
                 android:textColor="@color/titulos"
                 android:layout_marginTop="20dp"
+                android:elevation="5dp"
                 android:textStyle="italic"/>
         </LinearLayout>
     </RelativeLayout>
@@ -170,6 +171,7 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:backgroundTint="@color/btnFuerte"
+            android:elevation="5dp"
             android:text="@string/btn_compartir_cita"
             android:textAllCaps="false"
             android:textColor="@color/white"
