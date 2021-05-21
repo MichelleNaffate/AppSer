@@ -30,9 +30,6 @@ class CatalogoActividades : AppCompatActivity() {
         adapter = ActividadesAdapter(actividades, this)
         gridActividades.adapter = adapter
 
-
-
-
     }
 
 

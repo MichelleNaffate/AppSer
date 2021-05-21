@@ -135,7 +135,11 @@
     <string name="alarma">Alarma</string>
     <string name="beber_agua">Beber Agua</string>
     <string name="salir_a_correr">Salir a correr</string>
-    <string name="objetivo">Objetivo</string>
+    <string name="cantidadEj">1000</string>
+    <string name="tiempoEj">45</string>
+    <string name="cantidad">ml</string>
+    <string name="tiempo">min</string>
+    <string name="objetivo">Guardar Objetivo</string>
     <string name="habitos">Hábitos</string>
 
     <!-- PANTALLA RECOMENDACIONES -->

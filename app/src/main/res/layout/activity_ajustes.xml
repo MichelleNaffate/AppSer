@@ -23,7 +23,7 @@
         android:src = "@drawable/perfil"
         app:civ_border_width= "2dp"
         android:layout_marginTop="40dp"
-        app:civ_border_color="#FF000000"
+        app:civ_border_color="@color/cafecito"
         android:layout_gravity="center_horizontal"/>
     <Button
         android:id="@+id/btnEditar_foto"
@@ -52,6 +52,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:textColor="@color/titulos"/>
+
     <Button
         android:id="@+id/btncambiarnombre_usuario"
         android:layout_width="200dp"
@@ -74,7 +75,7 @@
         android:layout_marginTop="90dp"
         android:backgroundTint="@color/cafecito"
         android:textSize="15sp"
-        android:text="cambiar Contraseña"
+        android:text="Cambiar Contraseña"
         android:textColor="@color/white"
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>

@@ -30,8 +30,6 @@ class UsuarioActivity : AppCompatActivity() {
 
         if (Bundle != null){
             var nombre = Bundle.getString("nombre")
-
-
             tv_nombre.setText("$nombre")
         }
 
@@ -42,15 +40,16 @@ class UsuarioActivity : AppCompatActivity() {
         }
 
         btnAjustes.setOnClickListener(){
-
             val intent: Intent = Intent(this, AjustesActivity::class.java)
             intent.putExtra("nombre",tv_nombre.text.toString())
             startActivity(intent)
         }
+
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
         }
+
         btnAyuda.setOnClickListener {
             var intent: Intent = Intent(this, ContenidoAyuda::class.java)
             startActivity(intent)

@@ -8,18 +8,41 @@
     android:orientation="vertical"
     tools:context=".MenuOpciones">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="210dp"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingLeft="10dp"
+            android:text="Inicio"
+            android:textColor="@color/cafecito"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageViewUsuario"
         android:layout_width="70dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="end"
-        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
         android:src = "@drawable/perfil"
-        app:civ_border_width= "2dp"
-        app:civ_border_color="#FF000000"
-        />
+        app:civ_border_width= "1.5dp"
+        app:civ_border_color="@color/cafecito" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/linea1"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/linea" />
 
     <TextView
         android:id="@+id/titulo"
@@ -72,6 +95,7 @@
         android:textColor="@color/white"
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
+
     <Button
         android:id="@+id/btnRecordatorios"
         android:layout_width="230dp"
@@ -85,8 +109,6 @@
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
 
-
-
     <Button
         android:id="@+id/btnRitualMatutino"
         android:layout_width="200dp"
@@ -98,20 +120,19 @@
         android:text="@string/ritual_matutino"
         android:textColor="@color/white"
         app:cornerRadius="40dp"
-        android:textAllCaps="false"
-        />
+        android:textAllCaps="false" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        >
+        android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_alignParentBottom="true"
-            >
+            android:layout_alignParentBottom="true">
+
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="80dp"

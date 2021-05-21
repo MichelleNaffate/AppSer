@@ -46,7 +46,6 @@ class MenuOpciones : AppCompatActivity() {
         }
 
         imagenUsuario.setOnClickListener {
-
                 storage.collection("Usuarios")
                     .whereEqualTo("email",auth.currentUser?.email)
                     .get()
@@ -62,11 +61,8 @@ class MenuOpciones : AppCompatActivity() {
 
                         }
                     }
-
-
-
-
         }
+
         btnRecordatorios.setOnClickListener {
             var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
             startActivity(intent)

@@ -26,7 +26,6 @@
             android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
-
         <ImageView
             android:id="@+id/navegar"
             android:layout_width="45dp"
@@ -34,7 +33,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:src="@drawable/ic_baseline_navigate_before_24"
-            app:tint="@color/black" />
+            app:tint="@color/btnClaro" />
 
             <TextView
                 android:id="@+id/titulo"
@@ -56,8 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp">
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp">
 
         <TextView
             android:id="@+id/textviewHabitos"
@@ -82,14 +81,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp">
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp">
 
         <TableRow
             android:id="@+id/tablerow1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <ImageView
                 android:id="@+id/imageviewAgua"
@@ -107,17 +106,25 @@
                 android:textSize="17sp"
                 android:textColor="@color/titulos"/>
 
-            <Button
-                android:id="@+id/btnObjetivoAgua"
-                android:layout_width="64dp"
+            <EditText
+                android:id="@+id/txtCantidadAgua"
+                android:layout_width="90dp"
                 android:layout_height="45dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginRight="10dp"
-                android:backgroundTint="@color/btnFuerte"
-                android:text="@string/objetivo"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                app:cornerRadius="40dp" />
+                android:layout_marginStart="30dp"
+                android:gravity="center"
+                android:hint="@string/cantidadEj"
+                android:inputType="number"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/lbMin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/cantidad"
+                android:textColor="@color/titulos"
+                android:textSize="17sp" />
+
         </TableRow>
 
         <TableRow
@@ -142,31 +149,53 @@
                 android:textSize="17sp"
                 android:textColor="@color/titulos"/>
 
-            <Button
-                android:id="@+id/btnCorrer"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/txtTiempoCorrer"
+                android:layout_width="90dp"
                 android:layout_height="45dp"
-                android:layout_marginStart="50dp"
-                android:backgroundTint="@color/btnFuerte"
-                android:text="@string/objetivo"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                app:cornerRadius="40dp" />
+                android:gravity="center"
+                android:layout_marginStart="30dp"
+                android:hint="@string/tiempoEj"
+                android:textStyle="italic"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/lbTiempo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/tiempo"
+                android:textColor="@color/titulos"
+                android:textSize="17sp" />
+
         </TableRow>
 
     </TableLayout>
 
+    <Button
+        android:id="@+id/btnGuardarObjetivos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:backgroundTint="@color/btnFuerte"
+        android:text="@string/objetivo"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:cornerRadius="40dp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        >
+        android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_alignParentBottom="true"
-            >
+            android:layout_alignParentBottom="true">
+
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="80dp"

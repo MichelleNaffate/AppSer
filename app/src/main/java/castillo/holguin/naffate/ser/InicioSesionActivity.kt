@@ -36,7 +36,6 @@ class InicioSesionActivity : AppCompatActivity() {
         var contra: String = et_contra.text.toString()
 
         if(!correo.isNullOrBlank() && !contra.isNullOrBlank()){
-
             ingresarFirebase(correo,contra)
         }else{
             Toast.makeText(this, "Ingresar datos",
