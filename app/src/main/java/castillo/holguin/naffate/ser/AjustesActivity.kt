@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.*
+import kotlinx.android.synthetic.main.activity_habito_trabajar.navegar
 
 class AjustesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,11 @@ class AjustesActivity : AppCompatActivity() {
         }
         navegar.setOnClickListener{
             var intent : Intent = Intent(this, UsuarioActivity:: class.java)
+            startActivity(intent)
+        }
+
+        btnRecuperar_contraseña.setOnClickListener {
+            var intent: Intent = Intent(this, RecuperarPasswordActivity::class.java)
             startActivity(intent)
         }
     }

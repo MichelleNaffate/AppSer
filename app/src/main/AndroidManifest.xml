@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Ser">
         <activity android:name=".ContenidoAyuda"></activity>
         <activity android:name=".AjustesActivity" />
-        <activity android:name=".Ajustes" />
+        <activity android:name=".RecuperarPasswordActivity" />
         <activity android:name=".AgregarRecordatorio" />
         <activity android:name=".MetasActivity" />
         <activity android:name=".RecordatoriosActivity" />

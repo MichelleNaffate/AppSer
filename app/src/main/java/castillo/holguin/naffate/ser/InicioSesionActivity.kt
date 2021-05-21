@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_inicio_sesion.*
 
 class InicioSesionActivity : AppCompatActivity() {
 
@@ -25,6 +26,11 @@ class InicioSesionActivity : AppCompatActivity() {
 
         btn_acceder.setOnClickListener {
             valida_ingreso()
+        }
+
+        view_olvidaContra.setOnClickListener {
+            val intent: Intent = Intent(this, RecuperarPasswordActivity::class.java)
+            startActivity(intent)
         }
     }
 
