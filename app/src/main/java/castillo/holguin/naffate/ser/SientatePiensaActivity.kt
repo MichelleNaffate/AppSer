@@ -2,6 +2,7 @@ package castillo.holguin.naffate.ser
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -31,7 +32,7 @@ class SientatePiensaActivity : AppCompatActivity() {
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("Moldea tu Mente", "Reprograma tu realidad","5 min"))
+        ejercicios.add(Contenido("Domina tu Mente", "Reprograma tu realidad","9 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {
@@ -50,6 +51,16 @@ class SientatePiensaActivity : AppCompatActivity() {
             vista.txtTitulo.setText(ejercicio.titulo)
             vista.txtDetalle.setText(ejercicio.detalle)
             vista.txtMinutos.setText(ejercicio.minutos)
+            vista.ContenidoActividad.setOnClickListener() {
+                var url: String
+                val uri: Uri
+                if(position == 0) {
+                    url = "https://www.youtube.com/watch?v=k5Ntji60tGU"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+            }
             return vista
         }
 

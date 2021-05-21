@@ -2,13 +2,13 @@ package castillo.holguin.naffate.ser
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
 import kotlinx.android.synthetic.main.activity_recomendaciones.*
 import kotlinx.android.synthetic.main.activity_recomendaciones.navegar
 import kotlinx.android.synthetic.main.contenido_recomendaciones.view.*
@@ -53,6 +53,28 @@ class RecomendacionesActivity : AppCompatActivity() {
             vista.txtTitulo.setText(recomendacion.titulo)
             vista.txtDetalle.setText(recomendacion.autor)
             vista.imagenLibro.setImageResource(recomendacion.imagen)
+            vista.ContenidoRecomendaciones.setOnClickListener(){
+                var url : String
+                val uri: Uri
+                if(position == 0){
+                    url = "https://www.amazon.com.mx/El-arte-respirar-guardado-mindfulness-ebook/dp/B06XDXRF9Z"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+                else if(position == 1){
+                    url = "https://www.amazon.com.mx/obsequio-para-el-alma/dp/6074571902"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+                else if(position == 2){
+                    url = "https://www.amazon.com.mx/El-Fin-Ansiedad-End-Anxiety/dp/8417664335"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+            }
             return vista
         }
 

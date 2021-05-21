@@ -41,7 +41,7 @@
     <string name="terms">He leído y acepto los términos y condiciones de Ser</string>
     <string name="btn_acceder">Acceder</string>
     <string name="btncambiarContra">Cabiar contraseña</string>
-    <string name="olvidaContrasena">He olvidado mi contraseña</string>
+    <string name="olvidaContrasena">¿Olvidaste tu contraseña?</string>
 
     <!-- PANTALLA PRINCIPAL -->
     <string name="tus_rutinas">Tus rutinas</string>

@@ -2,6 +2,7 @@ package castillo.holguin.naffate.ser
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -48,6 +49,16 @@ class ElongarActivity : AppCompatActivity() {
             vista.txtTitulo.setText(ejercicio.titulo)
             vista.txtDetalle.setText(ejercicio.detalle)
             vista.txtMinutos.setText(ejercicio.minutos)
+            vista.ContenidoActividad.setOnClickListener(){
+                var url : String
+                val uri: Uri
+                if(position == 0) {
+                    url = "https://www.youtube.com/watch?v=KrgcBtBe5KI"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+            }
             return vista
         }
 

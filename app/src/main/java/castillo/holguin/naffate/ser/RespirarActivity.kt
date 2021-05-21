@@ -2,6 +2,7 @@ package castillo.holguin.naffate.ser
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -31,10 +32,9 @@ class RespirarActivity : AppCompatActivity() {
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("Respiración Energizante", "Como una taza de café, ¡pero solo toma 30 segunods!","1 min"))
-        ejercicios.add(Contenido("Respiración Relajante","Un ejercicio de respiración para ayudar a relajarte","1 min"))
-        ejercicios.add(Contenido("El Entrenamiento de la Meditación para Concentrarte","Enfocando tu mente","10 min"))
-        ejercicios.add(Contenido("Medita con tu Respiración","Respira con tu respiración como un maestro Zen","25 min"))
+        ejercicios.add(Contenido("Respiración Energizante", "Como una taza de café, ¡pero solo toma 2 min!","2 min"))
+        ejercicios.add(Contenido("Respiración Relajante","Un ejercicio de respiración para ayudar a relajarte","4 min"))
+        ejercicios.add(Contenido("Medita con tu Respiración","Respira con tu respiración como un maestro Zen","11 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {
@@ -53,6 +53,28 @@ class RespirarActivity : AppCompatActivity() {
             vista.txtTitulo.setText(ejercicio.titulo)
             vista.txtDetalle.setText(ejercicio.detalle)
             vista.txtMinutos.setText(ejercicio.minutos)
+            vista.ContenidoActividad.setOnClickListener() {
+                var url: String
+                val uri: Uri
+                if(position == 0){
+                    url = "https://www.youtube.com/watch?v=QgXeoZzEq3o"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+                else if(position == 1){
+                    url = "https://www.youtube.com/watch?v=PhhYvS0RjzI"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+                else if(position == 2){
+                    url = "https://www.youtube.com/watch?v=yq1pn55YQR4"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+            }
             return vista
         }
 

@@ -2,13 +2,14 @@ package castillo.holguin.naffate.ser
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.activity_elongar.*
+import kotlinx.android.synthetic.main.activity_elongar.navegar
 import kotlinx.android.synthetic.main.activity_yoga.*
 import kotlinx.android.synthetic.main.contenido.view.*
 
@@ -30,7 +31,7 @@ class YogaActivity : AppCompatActivity() {
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("Introducción a los Saludos del Sol", "5 minutos de introducción al yoga","5 min"))
+        ejercicios.add(Contenido("Introducción a los Saludos del Sol", "7 minutos de introducción al yoga","7 min"))
         ejercicios.add(Contenido("Saludos al Sol","El antiguo y relajante yoga","4 min"))
     }
 
@@ -50,6 +51,22 @@ class YogaActivity : AppCompatActivity() {
             vista.txtTitulo.setText(ejercicio.titulo)
             vista.txtDetalle.setText(ejercicio.detalle)
             vista.txtMinutos.setText(ejercicio.minutos)
+            vista.ContenidoActividad.setOnClickListener() {
+                var url: String
+                val uri: Uri
+                if(position == 0){
+                    url = "https://www.youtube.com/watch?v=PhkyDKNYBMg"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+                else if(position == 1){
+                    url = "https://www.youtube.com/watch?v=vs47BM1uE18"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+            }
             return vista
         }
 

@@ -36,10 +36,10 @@ class CatalogoActividades : AppCompatActivity() {
     fun cargaractividades() {
         actividades.add(Actividades("Hacer ejercicio", R.drawable.hacer_ejercicio))
         actividades.add(Actividades("Meditar", R.drawable.meditar))
-        actividades.add(Actividades("Trabajo significativo \ny enfocado", R.drawable.trabajo))
+        actividades.add(Actividades("Trabajo\nsignificativo\ny enfocado", R.drawable.trabajo))
         actividades.add(Actividades("Yoga", R.drawable.yoga))
         actividades.add(Actividades("Siesta \n recargadora", R.drawable.siesta))
-        actividades.add(Actividades("Respira", R.drawable.respira))
+        actividades.add(Actividades("Respirar", R.drawable.respira))
         actividades.add(Actividades("Sientate y piensa", R.drawable.piensa))
         actividades.add(Actividades("Elongar", R.drawable.elongar))
          }

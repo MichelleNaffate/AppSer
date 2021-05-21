@@ -2,6 +2,7 @@ package castillo.holguin.naffate.ser
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -33,7 +34,7 @@ class TrabajoSigEnfoActivity : AppCompatActivity() {
 
     fun cargarEjercicios() {
         ejercicios.add(Contenido("Trabajo Profundo", "45 minutos de trabajo intenso","45 min"))
-        ejercicios.add(Contenido("Enfoque Abrasador","2 horas de trabajo intenso","120 min"))
+        ejercicios.add(Contenido("Enfoque Abrasador","Mejora el enfoque en el trabajo y distraerse menos","6 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {
@@ -52,6 +53,22 @@ class TrabajoSigEnfoActivity : AppCompatActivity() {
             vista.txtTitulo.setText(ejercicio.titulo)
             vista.txtDetalle.setText(ejercicio.detalle)
             vista.txtMinutos.setText(ejercicio.minutos)
+            vista.ContenidoActividad.setOnClickListener() {
+                var url: String
+                val uri: Uri
+                if(position == 0){
+                    url = "https://www.youtube.com/watch?v=XFjd5hpyphg"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+                else if(position == 1){
+                    url = "https://www.youtube.com/watch?v=eEHT9xVk3RM"
+                    uri = Uri.parse(url)
+                    val intent = Intent(Intent.ACTION_VIEW, uri)
+                    context!!.startActivity(intent)
+                }
+            }
             return vista
         }
 
