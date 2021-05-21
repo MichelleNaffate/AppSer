@@ -16,16 +16,21 @@ class RitualMatutinoActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var usuario: FirebaseAuth
     private lateinit var storage: FirebaseFirestore
-    lateinit var objAgua: String
-    lateinit var objCorrer: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         usuario = Firebase.auth
         storage = FirebaseFirestore.getInstance()
-
+        var Bundle = intent.extras
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ritual_matutino)
+
+        if (Bundle != null){
+            var objAgua = Bundle.getString("objAgua")
+            var objCorrer = Bundle.getString("objCorrer")
+            txtCantidadAgua.setText("$objAgua")
+            txtTiempoCorrer.setText("$objCorrer")
+        }
 
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
@@ -50,22 +55,6 @@ class RitualMatutinoActivity : AppCompatActivity() {
             }
             .addOnFailureListener{
                 Toast.makeText(getApplicationContext(), "Intente de Nuevo", Toast.LENGTH_SHORT).show()
-            }
-    }
-
-    private fun mostrarObjetivos(){
-        storage.collection("RitualMatutino")
-            .whereEqualTo("email",auth.currentUser?.email)
-            .get()
-            .addOnSuccessListener {
-                it.forEach {
-                    if(it.exists()){
-                        objAgua = (it.getString("objetivoAgua").toString())
-                        objCorrer = (it.getString("objetivoCorrer").toString())
-                    }
-                    txtCantidadAgua.setText(objAgua)
-                    txtTiempoCorrer.setText(objCorrer)
-                }
             }
     }
 }

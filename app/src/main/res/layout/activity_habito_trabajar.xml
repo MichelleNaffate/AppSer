@@ -51,7 +51,7 @@
         android:id="@+id/btnMotivador"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/round_azul_button"
         android:gravity="center_horizontal">
 
@@ -115,7 +115,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="50dp">
 
         <TextView
             android:id="@+id/txtFrase1"
@@ -177,21 +177,21 @@
             android:textColor="@color/white"
             android:textSize="15sp"
             app:cornerRadius="40dp" />
-    </RelativeLayout>
 
+    </RelativeLayout>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        >
+        android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_alignParentBottom="true"
-            >
+            android:layout_alignParentBottom="true">
+
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="80dp"

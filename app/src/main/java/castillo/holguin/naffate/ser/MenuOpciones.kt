@@ -14,6 +14,9 @@ class MenuOpciones : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var storage: FirebaseFirestore
     lateinit var nombre: String
+    lateinit var objAgua: String
+    lateinit var objCorrer: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_opciones)
@@ -41,12 +44,27 @@ class MenuOpciones : AppCompatActivity() {
         }
 
         button4.setOnClickListener {
-            var intent : Intent = Intent(this, RitualMatutinoActivity:: class.java)
-            startActivity(intent)
+            storage.collection("RitualMatutino")
+                .whereEqualTo("email",auth.currentUser?.email)
+                .get()
+                .addOnSuccessListener {
+                    it.forEach {
+                        if (it.exists()) {
+                            objAgua = (it.getString("objetivoAgua").toString())
+                            objCorrer = (it.getString("objetivoCorrer").toString())
+                            var intent: Intent = Intent(this, RitualMatutinoActivity::class.java)
+                            intent.putExtra("objAgua", "$objAgua")
+                            intent.putExtra("objCorrer", "$objCorrer")
+                            startActivity(intent)
+                        } else {
+                            var intent: Intent = Intent(this, RitualMatutinoActivity::class.java)
+                            startActivity(intent)
+                        }
+                    }
+                }
         }
 
         imagenUsuario.setOnClickListener {
-
             storage.collection("Usuarios")
                 .whereEqualTo("email",auth.currentUser?.email)
                 .get()
@@ -57,17 +75,11 @@ class MenuOpciones : AppCompatActivity() {
                             var intent : Intent = Intent(this, UsuarioActivity:: class.java)
                             intent.putExtra("nombre","$nombre")
                             startActivity(intent)
-
-
                         }
-
                     }
                 }
-
-
-
-
         }
+
         btnRecordatorios.setOnClickListener {
             var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
             startActivity(intent)
