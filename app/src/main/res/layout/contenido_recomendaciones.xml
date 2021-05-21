@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/ContenidoRecomendaciones"
         android:layout_width="match_parent"
         android:layout_height="228dp"
         android:elevation="5dp"

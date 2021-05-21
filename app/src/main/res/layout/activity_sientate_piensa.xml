@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     android:background="@color/fondo"
     tools:context=".SientatePiensaActivity">
-  <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/navegar"
@@ -20,20 +20,20 @@
             android:layout_height="55dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
-            android:src="@drawable/ic_baseline_navigate_before_24"
-            app:tint="@color/black" />
+            android:src="@drawable/ic_baseline_navigate_before_24" />
 
-      <TextView
-          android:id="@+id/titulo"
-          android:layout_width="279dp"
-          android:layout_height="70dp"
-          android:layout_gravity="center_horizontal"
-          android:layout_marginTop="30dp"
-          android:gravity="center"
-          android:text="@string/sientate_y_piensa"
-          android:textColor="@color/titulos"
-          android:textSize="30sp" />
-  </LinearLayout>
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="285dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/sientate_y_piensa"
+            android:textColor="@color/titulos"
+            android:textSize="30sp" />
+
+    </LinearLayout>
 
     <GridView
         android:id="@+id/gridviewSientatePiensa"
