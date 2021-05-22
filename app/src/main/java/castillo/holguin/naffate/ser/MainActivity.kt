@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             var intent : Intent = Intent(this, MenuMain:: class.java)
             startActivity(intent)
+            finish()
 
 
 

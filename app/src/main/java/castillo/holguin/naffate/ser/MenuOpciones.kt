@@ -75,6 +75,7 @@ class MenuOpciones : AppCompatActivity() {
                             var intent : Intent = Intent(this, UsuarioActivity:: class.java)
                             intent.putExtra("nombre","$nombre")
                             startActivity(intent)
+                            finish()
                         }
                     }
                 }
@@ -84,6 +85,12 @@ class MenuOpciones : AppCompatActivity() {
             var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
             startActivity(intent)
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        System.exit(0)
+
     }
 }
 

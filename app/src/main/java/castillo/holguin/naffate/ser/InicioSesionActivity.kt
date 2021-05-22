@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_inicio_sesion.*
 
 class InicioSesionActivity : AppCompatActivity() {
@@ -57,12 +58,21 @@ class InicioSesionActivity : AppCompatActivity() {
 
                     val intent:Intent = Intent(this,MenuOpciones::class.java)
                     startActivity(intent)
+                    finish()
 
                 } else {
                     Toast.makeText(baseContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        var intent: Intent = Intent(this, MenuMain::class.java)
+
+        startActivity(intent)
+
     }
 
 }

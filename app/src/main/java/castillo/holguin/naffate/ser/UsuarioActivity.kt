@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_menu_opciones.*
 import kotlinx.android.synthetic.main.activity_trabajo_sig_enfo.*
 import kotlinx.android.synthetic.main.activity_usuario.*
@@ -47,6 +48,7 @@ class UsuarioActivity : AppCompatActivity() {
             val intent: Intent = Intent(this, AjustesActivity::class.java)
             intent.putExtra("nombre", tv_nombre.text.toString())
             startActivity(intent)
+            finish()
 
 
         }
@@ -59,6 +61,12 @@ class UsuarioActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, MenuOpciones::class.java)
+        startActivity(intent)
 
     }
 
