@@ -163,5 +163,13 @@
     <string name="fecha_recordatorio">Fecha</string>
     <string name="hora_recordatorio">Hora</string>
     <string name="btn_guarda_recordatorio">Guardar</string>
+    <string name="recuerdo">Cuando quieres que se te recuerde</string>
+    <string name="lunes">Lunes</string>
+    <string name="martes">Martes</string>
+    <string name="miercoles">Miercoles</string>
+    <string name="jueves">Jueves</string>
+    <string name="viernes">Viernes</string>
+    <string name="sabado">Sabado</string>
+    <string name="domingo">Domingo</string>
 
 </resources>
