@@ -31,8 +31,6 @@ class RegistroActivity : AppCompatActivity() {
 
         btn_registrar.setOnClickListener {
             valida_registro()
-
-
         }
     }
 
@@ -40,9 +38,6 @@ class RegistroActivity : AppCompatActivity() {
         val et_correo: EditText = findViewById(R.id.edit_emailNuevo)
         val et_contra: EditText = findViewById(R.id.edit_contraNueva)
         val et_contraConf: EditText = findViewById(R.id.edit_contraConfNueva)
-        // var et_nombUsuario: EditText = findViewById(R.id.edit_nombreUsuario)
-
-        //var usuario: String = et_nombUsuario.text.toString()
 
         var correo: String = et_correo.text.toString()
         var contra1: String = et_contra.text.toString()
@@ -52,10 +47,10 @@ class RegistroActivity : AppCompatActivity() {
             if (contra1 == contra2) {
                 registrarFirebase(correo, contra1)
             } else {
-                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Contraseñas No Coinciden", Toast.LENGTH_SHORT).show()
             }
         } else {
-            Toast.makeText(this, "Ingresar datos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Ingresar Datos", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -63,16 +58,14 @@ class RegistroActivity : AppCompatActivity() {
         usuario.createUserWithEmailAndPassword(correo, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user = usuario.currentUser
-
+                    var user = FirebaseAuth.getInstance().currentUser?.email.toString()
                     var nombreUsuario = edit_nombreNuevo.text.toString()
                     var correo = edit_emailNuevo.text.toString()
 
-
                     val map = hashMapOf(
                         "email" to "$correo",
-                        "Usuario" to "$nombreUsuario")
-                    storage.collection("Usuarios").document("$nombreUsuario")
+                        "usuario" to "$nombreUsuario")
+                    storage.collection("Usuarios").document("$user")
                         .set(map)
                         .addOnSuccessListener {
                             val intent: Intent = Intent(this, InicioSesionActivity::class.java)
@@ -83,12 +76,10 @@ class RegistroActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
 
                 } else {
-                    Toast.makeText(baseContext, "Authentication failed.",
+                    Toast.makeText(baseContext, "Intentelo Nuevamente, recuerde que la contraseña minimo 6 digitos.",
                         Toast.LENGTH_SHORT).show()
                 }
 
             }
     }
-    }
-
-
+}

@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_recordatorios.*
 
 class MostrarRecordatoriosActivity: AppCompatActivity() {
 
-    private var adaptador: AdaptadorTareas? = null
+    /*private var adaptador: AdaptadorTareas? = null
     private lateinit var storage: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
 
@@ -103,5 +103,5 @@ class MostrarRecordatoriosActivity: AppCompatActivity() {
 
             return vista
         }
-    }
+    }*/
 }

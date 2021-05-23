@@ -8,8 +8,6 @@
     android:background="@color/fondo"
     tools:context=".CatalogoActividades">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,8 +26,6 @@
 
     </LinearLayout>
 
-
-
     <GridView
         android:id="@+id/gridActividades"
         android:layout_width="match_parent"
@@ -42,14 +38,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        >
+        android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_alignParentBottom="true"
-            >
+            android:layout_alignParentBottom="true">
+
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="80dp"

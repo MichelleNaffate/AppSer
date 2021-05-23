@@ -26,10 +26,12 @@ class HabitoTrabajarActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
+
         btnMetas.setOnClickListener {
             var intent : Intent = Intent(this, MetasActivity:: class.java)
             startActivity(intent)
         }
+
         navegar.setOnClickListener{
             var intent : Intent = Intent(this, MenuOpciones:: class.java)
             startActivity(intent)

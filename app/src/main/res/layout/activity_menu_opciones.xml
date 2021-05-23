@@ -8,9 +8,8 @@
     android:orientation="vertical"
     tools:context=".MenuOpciones">
 
-
     <LinearLayout
-        android:layout_width="354dp"
+        android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -25,20 +24,17 @@
             app:srcCompat="@drawable/logoser" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageViewUsuario"
-            android:layout_width="70dp"
-            android:layout_height="60dp"
+            android:id="@+id/btnUsuario"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
             android:src="@drawable/perfil"
             android:elevation="6dp"
-
             android:layout_marginTop="4dp"
-            android:layout_marginLeft="160dp"
+            android:layout_marginLeft="150dp"
             app:civ_border_color="@color/cafecito"
             app:civ_border_width="1.5dp" />
 
     </LinearLayout>
-
-
 
     <TextView
         android:id="@+id/titulo"
@@ -97,6 +93,7 @@
         android:textColor="@color/white"
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
+
     <Button
         android:id="@+id/btnRecordatorios"
         android:layout_width="230dp"
@@ -112,8 +109,6 @@
         app:cornerRadius="40dp"
         android:textAllCaps="false"/>
 
-
-
     <Button
         android:id="@+id/btnRitualMatutino"
         android:layout_width="200dp"
@@ -126,9 +121,6 @@
         android:text="@string/ritual_matutino"
         android:textColor="@color/white"
         app:cornerRadius="40dp"
-        android:textAllCaps="false"
-        />
-
-
+        android:textAllCaps="false"/>
 
 </LinearLayout>

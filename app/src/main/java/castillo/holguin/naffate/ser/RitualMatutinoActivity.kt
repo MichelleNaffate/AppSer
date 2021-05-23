@@ -13,18 +13,17 @@ import kotlinx.android.synthetic.main.activity_recomendaciones.navegar
 import kotlinx.android.synthetic.main.activity_ritual_matutino.*
 
 class RitualMatutinoActivity : AppCompatActivity() {
-    private lateinit var auth: FirebaseAuth
+
     private lateinit var usuario: FirebaseAuth
     private lateinit var storage: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        usuario = Firebase.auth
-        storage = FirebaseFirestore.getInstance()
-        var Bundle = intent.extras
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ritual_matutino)
+        usuario = Firebase.auth
+        storage = FirebaseFirestore.getInstance()
 
+        var Bundle = intent.extras
         if (Bundle != null){
             var objAgua = Bundle.getString("objAgua")
             var objCorrer = Bundle.getString("objCorrer")
@@ -44,13 +43,12 @@ class RitualMatutinoActivity : AppCompatActivity() {
     }
 
     private fun agregarObjetivo() {
-        val map = hashMapOf(
-            "email" to usuario.currentUser?.email.toString(),
-            "objetivoAgua" to txtCantidadAgua.text.toString(),
-            "objetivoCorrer" to txtTiempoCorrer.text.toString())
-
-        storage.collection("RitualMatutino")
-            .add(map).addOnSuccessListener {
+        var user = FirebaseAuth.getInstance().currentUser?.email.toString()
+        storage.collection("RitualMatutino").document("$user")
+            .set(hashMapOf(
+                "objetivoAgua" to txtCantidadAgua.text.toString(),
+                "objetivoCorrer" to txtTiempoCorrer.text.toString()))
+            .addOnSuccessListener {
                 Toast.makeText(getApplicationContext(),"Objetivo Agregado", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener{
@@ -58,3 +56,4 @@ class RitualMatutinoActivity : AppCompatActivity() {
             }
     }
 }
+

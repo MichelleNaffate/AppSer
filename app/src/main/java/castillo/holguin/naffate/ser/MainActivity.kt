@@ -17,15 +17,11 @@ class MainActivity : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.btnContinuar)
 
-        Toast.makeText(this,"bienvenido", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,"Bienvenido", Toast.LENGTH_SHORT).show()
         button.setOnClickListener {
             var intent : Intent = Intent(this, MenuMain:: class.java)
             startActivity(intent)
             finish()
-
-
-
-
         }
     }
 }

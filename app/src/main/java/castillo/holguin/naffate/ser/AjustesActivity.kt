@@ -49,10 +49,6 @@ class AjustesActivity : AppCompatActivity() {
         storage = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
         nProgressDialog = ProgressDialog(this)
-
-
-
-
         Usuarioss = intent.getStringExtra("Usuario").toString()
 
         var tv_nombre = findViewById(R.id.modificar_Usuario_nombre) as TextView
@@ -60,8 +56,6 @@ class AjustesActivity : AppCompatActivity() {
 
         if (Bundle != null) {
             var nombre = Bundle.getString("nombre")
-
-
             tv_nombre.setText("$nombre")
         }
         btnEditar_foto.setOnClickListener(){
@@ -76,41 +70,26 @@ class AjustesActivity : AppCompatActivity() {
         }
 
         btncambiarnombre_usuario.setOnClickListener() {
-
-            storage.collection("Usuarios")
-                .whereEqualTo("email", auth.currentUser?.email)
-                .get()
+            var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
+            var user = FirebaseAuth.getInstance().currentUser?.email.toString()
+            storage.collection("Usuarios").document("$user").set(
+                hashMapOf(
+                    "usuario" to "$usuarioNombre",
+                    "email" to "$user")
+            )
                 .addOnSuccessListener {
-                    it.forEach {
-                        if (it.exists()) {
-                            if (Bundle != null) {
-                                var nombre = Bundle.getString("nombre").toString()
-                                val ref = storage.collection("Usuario").document()
-                                val id = FieldPath.documentId()
-
-                                var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
-                                storage.collection("Usuarios").document("$nombre").delete()
-                                val map = hashMapOf(
-                                        "email" to auth.currentUser?.email,
-                                        "Usuario" to "$usuarioNombre")
-                                storage.collection("Usuarios").document("$usuarioNombre")
-                                    .set(map)
-                                    .addOnSuccessListener {
-                                        Toast.makeText(this, "cambio exitoso $usuarioNombre", Toast.LENGTH_SHORT).show()
-                                    }
-                                    .addOnFailureListener {  }
-
-                            }
-                        }
-                    }
+                    Toast.makeText(this, "Cambio Exitoso $usuarioNombre", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener{
+                    Toast.makeText(getApplicationContext(), "Intente de Nuevo", Toast.LENGTH_SHORT).show()
                 }
         }
+
         navegar.setOnClickListener {
             var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
             var intent: Intent = Intent(this, UsuarioActivity::class.java)
             intent.putExtra("nombre", "$usuarioNombre")
             startActivity(intent)
-
         }
 
 
@@ -125,18 +104,17 @@ class AjustesActivity : AppCompatActivity() {
             nProgressDialog.show()
 
             var url : Uri? = data?.data
-
             var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
             var filePhat:StorageReference = nstorage.child("$usuarioNombre").child(url?.lastPathSegment.toString())
             if (url != null) {
                 filePhat.putFile(url).addOnSuccessListener() {
-                   nProgressDialog.dismiss()
+                    nProgressDialog.dismiss()
 
-                  val descargarFoto: String = nstorage.downloadUrl.toString()
+                    val descargarFoto: String = nstorage.downloadUrl.toString()
 
-                   // Glide.with(this).load(descargarFoto).fitCenter()
-                     //       .centerCrop().into(perfil)
-                   // val storageReference : FirebaseUser? = FirebaseAuth.getInstance().currentUser
+                    // Glide.with(this).load(descargarFoto).fitCenter()
+                    //       .centerCrop().into(perfil)
+                    // val storageReference : FirebaseUser? = FirebaseAuth.getInstance().currentUser
 
 // ImageView in your Activity
                     val imageView = findViewById<ImageView>(R.id.perfil)
@@ -144,11 +122,11 @@ class AjustesActivity : AppCompatActivity() {
 // Download directly from StorageReference using Glide
 // (See MyAppGlideModule for Loader registration)
                     Glide.with(this /* context */)
-                            .load(descargarFoto).into(imageView)
+                        .load(descargarFoto).into(imageView)
 
 
                     Toast.makeText(baseContext, "se ha cambiado correctamente.",
-                            Toast.LENGTH_SHORT).show()
+                        Toast.LENGTH_SHORT).show()
                 }
             }
         }
@@ -170,8 +148,7 @@ class AjustesActivity : AppCompatActivity() {
         fun registerComponents(context: Context?, glide: Glide?, registry: Registry) {
             // Register FirebaseImageLoader to handle StorageReference
             registry.append(StorageReference::class.java, InputStream::class.java,
-                    FirebaseImageLoader.Factory())
+                FirebaseImageLoader.Factory())
         }
     }
-    }
-
+}

@@ -16,7 +16,7 @@ class RecordatoriosActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btnAgregarNota.setOnClickListener{
+        btnAgregarRecordatorio.setOnClickListener{
             var intent:Intent = Intent(this,AgregarRecordatorio::class.java)
             startActivity(intent)
         }

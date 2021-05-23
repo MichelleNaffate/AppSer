@@ -28,13 +28,13 @@ class RecuperarPasswordActivity: AppCompatActivity() {
             if(!correo.isNullOrBlank()){
                 auth.sendPasswordResetEmail(correo).addOnCompleteListener{task ->
                     if(task.isSuccessful){
-                        Toast.makeText(this, "se envio a $correo", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Se envio a $correo", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this, "Error al enviar correo", Toast.LENGTH_SHORT).show()
                     }
                 }
             } else {
-                Toast.makeText(this, "Ingresar correo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Ingresar Correo", Toast.LENGTH_SHORT).show()
             }
         }
     }

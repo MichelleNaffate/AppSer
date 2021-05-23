@@ -28,12 +28,10 @@ class UsuarioActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         var tv_nombre = findViewById(R.id.nombre_Usuario) as TextView
-
         var Bundle = intent.extras
         if (Bundle != null) {
             var nombre = Bundle.getString("nombre")
             tv_nombre.setText("$nombre")
-
         }
 
         btnCerrarSesion.setOnClickListener() {
@@ -49,13 +47,13 @@ class UsuarioActivity : AppCompatActivity() {
             intent.putExtra("nombre", tv_nombre.text.toString())
             startActivity(intent)
             finish()
-
-
         }
+
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
         }
+
         btnAyuda.setOnClickListener {
             var intent: Intent = Intent(this, ContenidoAyuda::class.java)
             startActivity(intent)
@@ -63,6 +61,7 @@ class UsuarioActivity : AppCompatActivity() {
         }
 
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         var intent: Intent = Intent(this, MenuOpciones::class.java)

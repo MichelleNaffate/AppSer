@@ -40,7 +40,7 @@
     <string name="confirmar_contrasenia">Confirmar contraseña</string>
     <string name="terms">He leído y acepto los términos y condiciones de Ser</string>
     <string name="btn_acceder">Acceder</string>
-    <string name="btncambiarContra">Cabiar contraseña</string>
+    <string name="btncambiarContra">Cambiar contraseña</string>
     <string name="olvidaContrasena">¿Olvidaste tu contraseña?</string>
 
     <!-- PANTALLA PRINCIPAL -->
@@ -157,19 +157,21 @@
     <string name="title_activity_main2">MainActivity</string>
     <string name="todo">TODO</string>
 
-    <!-- RECORDATORIOS -->
-    <string name="titulo_Recordatorio">Titulo</string>
-    <string name="nuevo_recordatorio">Nuevo recordatorio</string>
+    <!-- PANTALLA RECORDATORIOS -->
+    <string name="titulo_Recordatorio">TÍtulo</string>
+    <string name="nuevo_recordatorio">Nuevo Recordatorio</string>
     <string name="fecha_recordatorio">Fecha</string>
     <string name="hora_recordatorio">Hora</string>
-    <string name="btn_guarda_recordatorio">Guardar</string>
-    <string name="recuerdo">Cuando quieres que se te recuerde</string>
-    <string name="lunes">Lunes</string>
-    <string name="martes">Martes</string>
-    <string name="miercoles">Miercoles</string>
-    <string name="jueves">Jueves</string>
-    <string name="viernes">Viernes</string>
-    <string name="sabado">Sabado</string>
-    <string name="domingo">Domingo</string>
+    <string name="btn_guardar_recordatorio">Guardar recordatorio</string>
+
+    <!-- PANTALLA METAS -->
+    <string name="nueva_Meta">Nueva Meta</string>
+    <string name="contenido_Meta">Escribe tu meta...</string>
+    <string name="btn_guardar_meta">Guardar meta</string>
+    <string name="btn_guardar_meta_cumplida">Guardar meta cumplida</string>
+
+    <!-- PANTALLA AJUSTES -->
+    <string name="btnCambiarFoto">Editar foto</string>
+    <string name="btnCambiarUsuario">Cambiar nombre de usuario</string>
 
 </resources>

@@ -44,7 +44,7 @@ class AgregarRecordatorio  : AppCompatActivity() {
         }
 
         val edit_titulo = root.findViewById(R.id.edit_tituloRecordatorio) as EditText
-        val edit_fecha = root.findViewById(R.id.edit_fecha) as EditText
+        val edit_fecha = root.findViewById(R.id.edit_fechaRecordatorio) as EditText
         val btn_guardar = root.findViewById(R.id.btnGuardaRecordatorio) as Button
 
         btn_guardar.setOnClickListener {

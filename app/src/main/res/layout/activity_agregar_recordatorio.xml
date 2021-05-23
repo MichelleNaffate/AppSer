@@ -13,6 +13,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
+
         <ImageView
             android:id="@+id/navegar"
             android:layout_width="45dp"
@@ -33,76 +34,73 @@
             android:textSize="30sp"/>
     </LinearLayout>
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/edit_tituloRecordatorio"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/edit_tituloRecordatorio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:hint="@string/titulo_Recordatorio"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:textStyle="italic"
-            android:textColorHint="@color/cafecito"
-            android:inputType="text"
-            android:textColor="@color/titulos"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="@string/titulo_Recordatorio"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="italic"
+        android:textColorHint="@color/cafecito"
+        android:inputType="text"
+        android:textColor="@color/titulos"/>
 
-        <EditText
-            android:id="@+id/edit_fecha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:hint="@string/fecha_recordatorio"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:textStyle="italic"
-            android:textColorHint="@color/cafecito"
-            android:inputType="date"
-            android:textColor="@color/titulos"/>
+    <EditText
+        android:id="@+id/edit_fechaRecordatorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="@string/fecha_recordatorio"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="italic"
+        android:textColorHint="@color/cafecito"
+        android:inputType="date"
+        android:textColor="@color/titulos"/>
 
-        <Button
-            android:id="@+id/btnHoraRecordatorio"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:backgroundTint="@color/btnFuerte"
-            android:text="@string/hora"
-            android:elevation="5dp"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            app:cornerRadius="40dp" />
+    <Button
+        android:id="@+id/btnHoraRecordatorio"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/btnFuerte"
+        android:text="@string/hora"
+        android:elevation="5dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:cornerRadius="40dp" />
 
-        <Button
-            android:id="@+id/btnGuardaRecordatorio"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="70dp"
-            android:backgroundTint="@color/btnFuerte"
-            android:text="@string/btn_guarda_recordatorio"
-            android:elevation="5dp"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            app:cornerRadius="40dp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnGuardaRecordatorio"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/btnFuerte"
+        android:text="@string/btn_guardar_recordatorio"
+        android:elevation="5dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:cornerRadius="40dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_alignParentBottom="true">
+
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="80dp"
@@ -110,6 +108,9 @@
                 android:layout_gravity="bottom"
                 app:srcCompat="@drawable/sol4"
                 android:contentDescription="@string/todo" />
+
         </LinearLayout>
+
     </RelativeLayout>
+
 </LinearLayout>
