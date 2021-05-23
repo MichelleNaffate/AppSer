@@ -1,27 +1,34 @@
 package castillo.holguin.naffate.ser
 
-import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.KeyEvent
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ActionMode
 import com.bumptech.glide.Glide
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.android.gms.tasks.Task
+import com.bumptech.glide.Registry
+import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.module.AppGlideModule
+import com.firebase.ui.storage.images.FirebaseImageLoader
+import com.google.android.gms.tasks.Tasks
+import com.google.api.Context
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FieldPath
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.*
-import com.squareup.okhttp.internal.DiskLruCache
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.navegar
+import java.io.InputStream
+
 
 class AjustesActivity : AppCompatActivity() {
 
@@ -36,11 +43,13 @@ class AjustesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ajustes)
+
         nstorage =  FirebaseStorage.getInstance().reference
         usuario = Firebase.auth
         storage = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
         nProgressDialog = ProgressDialog(this)
+
 
 
 
@@ -82,12 +91,12 @@ class AjustesActivity : AppCompatActivity() {
                                 var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
                                 storage.collection("Usuarios").document("$nombre").delete()
                                 val map = hashMapOf(
-                                    "email" to auth.currentUser?.email,
-                                    "Usuario" to "$usuarioNombre")
+                                        "email" to auth.currentUser?.email,
+                                        "Usuario" to "$usuarioNombre")
                                 storage.collection("Usuarios").document("$usuarioNombre")
                                     .set(map)
                                     .addOnSuccessListener {
-                                        Toast.makeText(this,"cambio exitoso $usuarioNombre", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(this, "cambio exitoso $usuarioNombre", Toast.LENGTH_SHORT).show()
                                     }
                                     .addOnFailureListener {  }
 
@@ -99,7 +108,7 @@ class AjustesActivity : AppCompatActivity() {
         navegar.setOnClickListener {
             var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
             var intent: Intent = Intent(this, UsuarioActivity::class.java)
-            intent.putExtra("nombre","$usuarioNombre")
+            intent.putExtra("nombre", "$usuarioNombre")
             startActivity(intent)
 
         }
@@ -120,31 +129,49 @@ class AjustesActivity : AppCompatActivity() {
             var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
             var filePhat:StorageReference = nstorage.child("$usuarioNombre").child(url?.lastPathSegment.toString())
             if (url != null) {
-                filePhat.putFile(url).addOnSuccessListener {
-
+                filePhat.putFile(url).addOnSuccessListener() {
                    nProgressDialog.dismiss()
 
-                    ////var descargarFoto: Task<Uri> = nstorage.downloadUrl
-                    //Glide.with(this).load(descargarFoto).fitCenter()
-                      //      .centerCrop().into(perfil)
+                  val descargarFoto: String = nstorage.downloadUrl.toString()
+
+                   // Glide.with(this).load(descargarFoto).fitCenter()
+                     //       .centerCrop().into(perfil)
+                   // val storageReference : FirebaseUser? = FirebaseAuth.getInstance().currentUser
+
+// ImageView in your Activity
+                    val imageView = findViewById<ImageView>(R.id.perfil)
+
+// Download directly from StorageReference using Glide
+// (See MyAppGlideModule for Loader registration)
+                    Glide.with(this /* context */)
+                            .load(descargarFoto).into(imageView)
 
 
                     Toast.makeText(baseContext, "se ha cambiado correctamente.",
-                        Toast.LENGTH_SHORT).show()
+                            Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
 
+
+
     override fun onBackPressed() {
         super.onBackPressed()
         var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
         var intent: Intent = Intent(this, UsuarioActivity::class.java)
-        intent.putExtra("nombre","$usuarioNombre")
+        intent.putExtra("nombre", "$usuarioNombre")
         startActivity(intent)
 
     }
 
-
+    @GlideModule
+    class MyAppGlideModule : AppGlideModule() {
+        fun registerComponents(context: Context?, glide: Glide?, registry: Registry) {
+            // Register FirebaseImageLoader to handle StorageReference
+            registry.append(StorageReference::class.java, InputStream::class.java,
+                    FirebaseImageLoader.Factory())
+        }
+    }
     }
 
