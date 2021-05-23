@@ -20,7 +20,7 @@ class AgregarRecordatorio  : AppCompatActivity() {
     private lateinit var storage: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
 
-    override fun onCreate(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    fun onCreate(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_recordatorio)
 

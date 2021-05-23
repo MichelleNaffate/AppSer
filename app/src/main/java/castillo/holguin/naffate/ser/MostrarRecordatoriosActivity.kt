@@ -25,7 +25,7 @@ class MostrarRecordatoriosActivity: AppCompatActivity() {
         var first = true
     }
 
-    override fun onCreate(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    fun onCreate(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreate(savedInstanceState)
 
         val root = inflater.inflate(R.layout.activity_recordatorios, container, false)
@@ -63,7 +63,7 @@ class MostrarRecordatoriosActivity: AppCompatActivity() {
                 gridviewRecordatorios.adapter = adaptador
             }
             .addOnFailureListener {
-                Toast.makeText(context, "Error: intente de nuevo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Error: intente de nuevo", Toast.LENGTH_SHORT).show()
             }
     }
 
