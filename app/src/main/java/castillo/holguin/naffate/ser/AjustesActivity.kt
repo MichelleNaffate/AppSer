@@ -58,6 +58,7 @@ class AjustesActivity : AppCompatActivity() {
             var nombre = Bundle.getString("nombre")
             tv_nombre.setText("$nombre")
         }
+
         btnEditar_foto.setOnClickListener(){
             var intent: Intent = Intent(Intent.ACTION_PICK)
             intent.setType("image/*")
