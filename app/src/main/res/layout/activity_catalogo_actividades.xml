@@ -10,15 +10,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
+        <ImageView
+            android:id="@+id/btnNavegar"
+            android:layout_width="45dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_baseline_navigate_before_24" />
+
         <TextView
             android:id="@+id/titulo"
-            android:layout_width="match_parent"
+            android:layout_width="230dp"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
             android:gravity="center"
             android:text="@string/actividades"
             android:textColor="@color/titulos"
@@ -26,7 +35,7 @@
 
     </LinearLayout>
 
-    <GridView
+        <GridView
         android:id="@+id/gridActividades"
         android:layout_width="match_parent"
         android:layout_height="520dp"

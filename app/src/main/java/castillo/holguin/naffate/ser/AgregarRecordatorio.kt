@@ -1,72 +1,79 @@
 package castillo.holguin.naffate.ser
 
+import android.app.DatePickerDialog
+import android.app.DatePickerDialog.OnDateSetListener
 import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_agregar_nota.navegar
+import kotlinx.android.synthetic.main.activity_agregar_recordatorio.*
 import java.text.SimpleDateFormat
 import java.util.*
 
+
 class AgregarRecordatorio  : AppCompatActivity() {
 
-    private lateinit var storage: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
+    private lateinit var storage: FirebaseFirestore
 
-    fun onCreate(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_recordatorio)
+        val root = layoutInflater
 
-        val root = inflater.inflate(R.layout.activity_agregar_recordatorio, container, false)
+        storage = FirebaseFirestore.getInstance()
+        auth = FirebaseAuth.getInstance()
 
-        storage= FirebaseFirestore.getInstance()
-        auth= FirebaseAuth.getInstance()
+        edit_fechaRecordatorio.setOnClickListener{
+            val cal = Calendar.getInstance()
+            val dateSetListener = DatePickerDialog.OnDateSetListener{ datePicker, day, mounth, year ->
+                cal.set(Calendar.DAY_OF_MONTH, day)
+                cal.set(Calendar.MONTH, mounth)
+                cal.set(Calendar.YEAR, year)
+                edit_fechaRecordatorio.text.toString()
+            }
+            DatePickerDialog(root.context, dateSetListener, cal.get(Calendar.DAY_OF_MONTH),
+                cal.get(Calendar.MONTH), cal.get(Calendar.YEAR)).show()
+        }
 
-        val btn_time: Button = root.findViewById(R.id.btnHoraRecordatorio)
-
-        btn_time.setOnClickListener{
+        edit_HoraRecordatorio.setOnClickListener{
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener{ timePicker, hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
-
-                btn_time.text = SimpleDateFormat("HH:mm").format(cal.time)
+                var format = SimpleDateFormat("HH:mm").format(cal.time)
+                edit_HoraRecordatorio.text.toString().format("$format")
             }
             TimePickerDialog(root.context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY),
                 cal.get(Calendar.MINUTE), true).show()
         }
 
-        val edit_titulo = root.findViewById(R.id.edit_tituloRecordatorio) as EditText
-        val edit_fecha = root.findViewById(R.id.edit_fechaRecordatorio) as EditText
-        val btn_guardar = root.findViewById(R.id.btnGuardaRecordatorio) as Button
-
-        btn_guardar.setOnClickListener {
-
-            var titulo = edit_titulo.text.toString()
-            var dia = edit_fecha.text.toString()
-            var time = btn_time.text.toString()
-
-            val recordatorio1 = hashMapOf(
-                "titulo" to edit_titulo.text.toString(),
-                "dia" to edit_fecha.text.toString(),
-                "hora" to btn_time.text.toString())
-
-            storage.collection("Recordatorios")
-                .add(recordatorio1)
+        btnGuardaRecordatorio.setOnClickListener(){
+            storage.collection("Recordatorios").add(
+                hashMapOf(
+                    "titulo" to edit_tituloRecordatorio.text.toString(),
+                    "dia" to edit_fechaRecordatorio.text.toString(),
+                    "hora" to edit_HoraRecordatorio.text.toString(),
+                    "email" to auth.currentUser?.email))
                 .addOnSuccessListener {
-                    Toast.makeText(root.context, "Task Agregada", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(getApplicationContext(),"Recordatorio Agregado", Toast.LENGTH_SHORT).show()
+                    var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
+                    startActivity(intent)
                 }
                 .addOnFailureListener{
-                    Toast.makeText(root.context, "Error: Intente de nuevo", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(getApplicationContext(), "Intente de Nuevo", Toast.LENGTH_SHORT).show()
                 }
         }
-        return root
+
+        navegar.setOnClickListener{
+            var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
+            startActivity(intent)
+        }
+
     }
 }

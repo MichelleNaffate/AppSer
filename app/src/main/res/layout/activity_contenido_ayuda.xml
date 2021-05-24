@@ -26,7 +26,7 @@
 
         <TextView
             android:id="@+id/titulo"
-            android:layout_width="253dp"
+            android:layout_width="230dp"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
@@ -34,38 +34,58 @@
             android:text="Ayuda"
             android:textColor="@color/titulos"
             android:textSize="30sp" />
+
         <ImageView
             android:id="@+id/help"
             android:layout_width="45dp"
             android:layout_height="55dp"
             android:layout_marginTop="10dp"
-
             android:src="@drawable/ic_baseline_help_24" />
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/texto"
-        android:layout_width="253dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+    <EditText
+        android:id="@+id/edit_ContenidoMeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Escribe tu duda o comentario..."
         android:gravity="center"
-        android:text="textooooo"
-        android:textColor="@color/titulos"
-        android:textSize="30sp" />
+        android:layout_gravity="center_horizontal"
+        android:textStyle="italic"
+        android:textColorHint="@color/cafecito"
+        android:inputType="text"
+        android:textColor="@color/titulos"/>
+
+
+    <Button
+        android:id="@+id/btnGuardarMeta"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/btnFuerte"
+        android:text="Enviar"
+        android:elevation="5dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:cornerRadius="40dp" />
+
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        >
+        android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_alignParentBottom="true"
-            >
+            android:layout_alignParentBottom="true">
+
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="80dp"

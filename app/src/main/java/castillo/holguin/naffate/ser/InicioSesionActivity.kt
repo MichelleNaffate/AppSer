@@ -61,7 +61,7 @@ class InicioSesionActivity : AppCompatActivity() {
                     finish()
 
                 } else {
-                    Toast.makeText(baseContext, "Authentication failed.",
+                    Toast.makeText(baseContext, "Usuario o contraseña incorrectos.",
                         Toast.LENGTH_SHORT).show()
                 }
             }

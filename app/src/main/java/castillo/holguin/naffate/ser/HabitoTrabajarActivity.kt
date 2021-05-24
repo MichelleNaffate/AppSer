@@ -15,7 +15,7 @@ class HabitoTrabajarActivity : AppCompatActivity() {
         btnCompartir.setOnClickListener {
             var intent : Intent = Intent( android.content.Intent.ACTION_SEND)
             intent.setType("text/plain")
-            intent.putExtra(Intent.EXTRA_SUBJECT, "¡Descarga ahora App Ser desde PlayStore!")
+            intent.putExtra(Intent.EXTRA_SUBJECT, "App Ser")
             intent.putExtra(Intent.EXTRA_TEXT, "¡Descarga ahora App Ser desde PlayStore!\n\nEmpieza donde estás.\nUsa lo que tienes.\nHaz lo que puedas.\nPor Artur Ashe.\n(Cita enviada desde App Ser).")
             startActivity(Intent.createChooser(intent, "Compartir vía"))
         }

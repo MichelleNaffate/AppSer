@@ -132,8 +132,6 @@ class AjustesActivity : AppCompatActivity() {
         }
     }
 
-
-
     override fun onBackPressed() {
         super.onBackPressed()
         var usuarioNombre: String = modificar_Usuario_nombre.text.toString()

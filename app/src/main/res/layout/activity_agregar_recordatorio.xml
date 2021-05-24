@@ -62,20 +62,29 @@
         android:textStyle="italic"
         android:textColorHint="@color/cafecito"
         android:inputType="date"
+        android:focusable="false"
+        android:clickable="true"
+        android:maxLines="1"
         android:textColor="@color/titulos"/>
 
-    <Button
-        android:id="@+id/btnHoraRecordatorio"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
+    <EditText
+        android:id="@+id/edit_HoraRecordatorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:backgroundTint="@color/btnFuerte"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:hint="@string/fecha_recordatorio"
+        android:gravity="center"
         android:text="@string/hora"
-        android:elevation="5dp"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:cornerRadius="40dp" />
+        android:layout_gravity="center_horizontal"
+        android:textStyle="italic"
+        android:inputType="time"
+        android:focusable="false"
+        android:clickable="true"
+        android:maxLines="1"
+        android:textColorHint="@color/cafecito"
+        android:textColor="@color/titulos"/>
 
     <Button
         android:id="@+id/btnGuardaRecordatorio"

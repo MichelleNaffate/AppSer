@@ -68,7 +68,7 @@ class RegistroActivity : AppCompatActivity() {
                     storage.collection("Usuarios").document("$user")
                         .set(map)
                         .addOnSuccessListener {
-                            val intent: Intent = Intent(this, InicioSesionActivity::class.java)
+                            val intent: Intent = Intent(this, MenuOpciones::class.java)
                             startActivity(intent) }
                         .addOnFailureListener {  }
 
@@ -76,7 +76,7 @@ class RegistroActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
 
                 } else {
-                    Toast.makeText(baseContext, "Intentelo Nuevamente, recuerde que la contraseña minimo 6 digitos.",
+                    Toast.makeText(baseContext, "Intentelo nuevamente,recuerde que la contraseña mínimo 6 dígitos.",
                         Toast.LENGTH_SHORT).show()
                 }
 

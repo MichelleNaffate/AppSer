@@ -4,12 +4,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.activity_actividades.view.*
+import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_catalogo_actividades.*
 import kotlinx.android.synthetic.main.activity_elongar.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.*
@@ -30,6 +30,11 @@ class CatalogoActividades : AppCompatActivity() {
         adapter = ActividadesAdapter(actividades, this)
         gridActividades.adapter = adapter
 
+        btnNavegar.setOnClickListener {
+            var intent: Intent = Intent(this, MenuOpciones::class.java)
+            startActivity(intent)
+        }
+
     }
 
 
@@ -41,8 +46,7 @@ class CatalogoActividades : AppCompatActivity() {
         actividades.add(Actividades("Siesta \n recargadora", R.drawable.siesta))
         actividades.add(Actividades("Respirar", R.drawable.respira))
         actividades.add(Actividades("Sientate y piensa", R.drawable.piensa))
-        actividades.add(Actividades("Elongar", R.drawable.elongar))
-         }
+        actividades.add(Actividades("Elongar", R.drawable.elongar)) }
 
     class ActividadesAdapter : BaseAdapter {
         var actividades = ArrayList<Actividades>()
