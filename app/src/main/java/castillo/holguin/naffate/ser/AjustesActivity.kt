@@ -1,5 +1,6 @@
 package castillo.holguin.naffate.ser
 
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
@@ -16,6 +17,7 @@ import com.bumptech.glide.Registry
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule
 import com.firebase.ui.storage.images.FirebaseImageLoader
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.gms.tasks.Tasks
 import com.google.api.Context
 import com.google.firebase.auth.FirebaseAuth
@@ -33,23 +35,33 @@ import java.io.InputStream
 import java.util.*
 
 
-class AjustesActivity : AppCompatActivity(), View.OnClickListener {
+class AjustesActivity : AppCompatActivity() {
+
 
     private lateinit var usuario: FirebaseAuth
     private lateinit var storage: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
-    private lateinit var nstorage : StorageReference
-    private var GALLERY_INTENT = 1
+    private lateinit var nstorage: StorageReference
+
     private var filePath: Uri? = null
 
     private lateinit var nProgressDialog: ProgressDialog
-    private var PICK_IMAGE_REQUEST=1234
+    private var PICK_IMAGE_REQUEST = 1234
     private lateinit var Usuarioss: String
+
+
+    companion object {
+        const val REQUEST_FROM_CAMERA = 1001
+        const val REQUEST_FROM_GALLERY = 1002
+    }
+
+    private val TAG="FirebaseStorageManager"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ajustes)
+
 
         usuario = Firebase.auth
         storage = FirebaseFirestore.getInstance()
@@ -60,8 +72,8 @@ class AjustesActivity : AppCompatActivity(), View.OnClickListener {
 
         var tv_nombre = findViewById(R.id.modificar_Usuario_nombre) as TextView
         var Bundle = intent.extras
-        btnEditar_foto.setOnClickListener(this)
-        btnguardar.setOnClickListener(this)
+        initUI()
+
 
         if (Bundle != null) {
             var nombre = Bundle.getString("nombre")
@@ -81,13 +93,15 @@ class AjustesActivity : AppCompatActivity(), View.OnClickListener {
             storage.collection("Usuarios").document("$user").set(
                 hashMapOf(
                     "usuario" to "$usuarioNombre",
-                    "email" to "$user")
+                    "email" to "$user"
+                )
             )
                 .addOnSuccessListener {
                     Toast.makeText(this, "Cambio Exitoso $usuarioNombre", Toast.LENGTH_SHORT).show()
                 }
-                .addOnFailureListener{
-                    Toast.makeText(getApplicationContext(), "Intente de Nuevo", Toast.LENGTH_SHORT).show()
+                .addOnFailureListener {
+                    Toast.makeText(getApplicationContext(), "Intente de Nuevo", Toast.LENGTH_SHORT)
+                        .show()
                 }
         }
 
@@ -100,33 +114,58 @@ class AjustesActivity : AppCompatActivity(), View.OnClickListener {
 
 
     }
+
+    private fun initUI() {
+        btncamara.setOnClickListener {
+            captureImageUsingCamera()
+        }
+        btnEditar_foto.setOnClickListener {
+            pickImageFromGallery()
+        }
+    }
+
+    private fun pickImageFromGallery() {
+        ImagePicker.with(this).galleryOnly()
+            .crop()
+            .start(REQUEST_FROM_GALLERY)
+    }
+
+    private fun captureImageUsingCamera() {
+        ImagePicker.with(this).cameraOnly()
+            .crop()
+            .start(REQUEST_FROM_CAMERA)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        perfil.setImageURI(data?.data)
+        FirebaseStorageManager().uploadImage(this, data?.data!!)
+
+        if (resultCode == Activity.RESULT_OK) {
+            when (requestCode) {
+                REQUEST_FROM_CAMERA -> {
+                    if (data != null) {
+                        perfil.setImageURI(data.data)
+                        FirebaseStorageManager().uploadImage(this, data.data!!)
 
 
-            if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
-                filePath = data.data
-                nProgressDialog.setTitle("Subiendo.....")
-                nProgressDialog.setMessage("Subiendo foto a perfil Ser")
-                nProgressDialog.setCancelable(false)
-                nProgressDialog.show()
-
-                try {
-                    nProgressDialog.dismiss()
-
-                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
-                    perfil.setImageBitmap(bitmap)
-                } catch (e: Exception) {
-                    e.printStackTrace()
+                    }
 
                 }
-                var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
+                REQUEST_FROM_GALLERY -> {
+                    if (data != null) {
+                        perfil.setImageURI(data.data)
+                        FirebaseStorageManager().uploadImage(this, data.data!!)
+                    }
 
-                Toast.makeText(
-                    baseContext, "se ha cambiado correctamente.",
-                    Toast.LENGTH_SHORT
-                ).show()
+                }
             }
+
+            Toast.makeText(
+                baseContext, "${data.data}se ha cambiado correctamente.",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
 
 
     }
@@ -139,56 +178,12 @@ class AjustesActivity : AppCompatActivity(), View.OnClickListener {
         startActivity(intent)
 
     }
+    fun cargarImagen(){
 
-    @GlideModule
-    class MyAppGlideModule : AppGlideModule() {
-        fun registerComponents(context: Context?, glide: Glide?, registry: Registry) {
-            // Register FirebaseImageLoader to handle StorageReference
-            registry.append(StorageReference::class.java, InputStream::class.java,
-                FirebaseImageLoader.Factory())
-        }
+
     }
 
-    override fun onClick(v: View?) {
-
-        if(v==btnEditar_foto){
-
-            showFileChooser()
 
 
-        }else{
-            UploadFile()
 
-        }
-    }
-
-    private fun UploadFile() {
-        if(filePath!=null){
-            val progressDialog= ProgressDialog(this)
-            progressDialog.setTitle("cargando....")
-            progressDialog.show()
-            var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
-            val imageref = nstorage!!.child("$usuarioNombre/"+ UUID.randomUUID().toString())
-            imageref.putFile(filePath!!).addOnSuccessListener {
-                progressDialog.dismiss()
-                Toast.makeText(applicationContext,"$imageref File Upload", Toast.LENGTH_SHORT).show()
-
-            }.addOnFailureListener(){
-                progressDialog.dismiss()
-                Toast.makeText(applicationContext,"Failed", Toast.LENGTH_SHORT).show()
-
-            }.addOnProgressListener { taskSnapshot ->
-                val progress = 100.0*taskSnapshot.bytesTransferred/taskSnapshot.totalByteCount
-                progressDialog.setMessage("Upload"+progress.toInt()+"%...")
-            }
-
-        }
-    }
-
-    private fun showFileChooser() {
-        val intent = Intent()
-        intent.type="image/"
-        intent.action=Intent.ACTION_GET_CONTENT
-        startActivityForResult(Intent.createChooser(intent,"SELECCIONE UNA IMAGEN"),PICK_IMAGE_REQUEST)
-    }
 }

@@ -54,7 +54,7 @@
             android:layout_height="55dp"
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="75dp"
             android:backgroundTint="@color/btnFuerte"
             android:elevation="5dp"
             android:text="Subir foto"
@@ -63,7 +63,7 @@
             android:textSize="15sp"
             app:cornerRadius="40dp" />
         <Button
-            android:id="@+id/btnguardar"
+            android:id="@+id/btncamara"
             android:layout_width="120dp"
             android:layout_height="55dp"
             android:layout_gravity="left"
@@ -71,7 +71,7 @@
             android:layout_marginLeft="10dp"
             android:backgroundTint="@color/btnFuerte"
             android:elevation="5dp"
-            android:text="Guardar"
+            android:text="Camara"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="15sp"
