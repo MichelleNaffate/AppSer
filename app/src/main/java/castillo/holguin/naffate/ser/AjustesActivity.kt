@@ -4,6 +4,8 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -28,42 +30,45 @@ import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.navegar
 import java.io.InputStream
+import java.util.*
 
 
-class AjustesActivity : AppCompatActivity() {
+class AjustesActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var usuario: FirebaseAuth
     private lateinit var storage: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
     private lateinit var nstorage : StorageReference
     private var GALLERY_INTENT = 1
-    private lateinit var nProgressDialog: ProgressDialog
+    private var filePath: Uri? = null
 
+    private lateinit var nProgressDialog: ProgressDialog
+    private var PICK_IMAGE_REQUEST=1234
     private lateinit var Usuarioss: String
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ajustes)
 
-        nstorage =  FirebaseStorage.getInstance().reference
         usuario = Firebase.auth
         storage = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
         nProgressDialog = ProgressDialog(this)
         Usuarioss = intent.getStringExtra("Usuario").toString()
+        nstorage = FirebaseStorage.getInstance().reference
 
         var tv_nombre = findViewById(R.id.modificar_Usuario_nombre) as TextView
         var Bundle = intent.extras
+        btnEditar_foto.setOnClickListener(this)
+        btnguardar.setOnClickListener(this)
 
         if (Bundle != null) {
             var nombre = Bundle.getString("nombre")
             tv_nombre.setText("$nombre")
         }
 
-        btnEditar_foto.setOnClickListener(){
-            var intent: Intent = Intent(Intent.ACTION_PICK)
-            intent.setType("image/*")
-            startActivityForResult(intent, GALLERY_INTENT)
-        }
+
 
         btnRecuperar_contraseña.setOnClickListener {
             var intent: Intent = Intent(this, RecuperarPasswordActivity::class.java)
@@ -97,40 +102,33 @@ class AjustesActivity : AppCompatActivity() {
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == GALLERY_INTENT && resultCode== RESULT_OK){
 
-            nProgressDialog.setTitle("Subiendo.....")
-            nProgressDialog.setMessage("Subiendo foto a perfil Ser")
-            nProgressDialog.setCancelable(false)
-            nProgressDialog.show()
 
-            var url : Uri? = data?.data
-            var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
-            var filePhat:StorageReference = nstorage.child("$usuarioNombre").child(url?.lastPathSegment.toString())
-            if (url != null) {
-                filePhat.putFile(url).addOnSuccessListener() {
+            if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
+                filePath = data.data
+                nProgressDialog.setTitle("Subiendo.....")
+                nProgressDialog.setMessage("Subiendo foto a perfil Ser")
+                nProgressDialog.setCancelable(false)
+                nProgressDialog.show()
+
+                try {
                     nProgressDialog.dismiss()
 
-                    val descargarFoto: String = nstorage.downloadUrl.toString()
+                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
+                    perfil.setImageBitmap(bitmap)
+                } catch (e: Exception) {
+                    e.printStackTrace()
 
-                    // Glide.with(this).load(descargarFoto).fitCenter()
-                    //       .centerCrop().into(perfil)
-                    // val storageReference : FirebaseUser? = FirebaseAuth.getInstance().currentUser
-
-// ImageView in your Activity
-                    val imageView = findViewById<ImageView>(R.id.perfil)
-
-// Download directly from StorageReference using Glide
-// (See MyAppGlideModule for Loader registration)
-                    Glide.with(this /* context */)
-                        .load(descargarFoto).into(imageView)
-
-
-                    Toast.makeText(baseContext, "se ha cambiado correctamente.",
-                        Toast.LENGTH_SHORT).show()
                 }
+                var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
+
+                Toast.makeText(
+                    baseContext, "se ha cambiado correctamente.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-        }
+
+
     }
 
     override fun onBackPressed() {
@@ -149,5 +147,48 @@ class AjustesActivity : AppCompatActivity() {
             registry.append(StorageReference::class.java, InputStream::class.java,
                 FirebaseImageLoader.Factory())
         }
+    }
+
+    override fun onClick(v: View?) {
+
+        if(v==btnEditar_foto){
+
+            showFileChooser()
+
+
+        }else{
+            UploadFile()
+
+        }
+    }
+
+    private fun UploadFile() {
+        if(filePath!=null){
+            val progressDialog= ProgressDialog(this)
+            progressDialog.setTitle("cargando....")
+            progressDialog.show()
+            var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
+            val imageref = nstorage!!.child("$usuarioNombre/"+ UUID.randomUUID().toString())
+            imageref.putFile(filePath!!).addOnSuccessListener {
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext,"$imageref File Upload", Toast.LENGTH_SHORT).show()
+
+            }.addOnFailureListener(){
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext,"Failed", Toast.LENGTH_SHORT).show()
+
+            }.addOnProgressListener { taskSnapshot ->
+                val progress = 100.0*taskSnapshot.bytesTransferred/taskSnapshot.totalByteCount
+                progressDialog.setMessage("Upload"+progress.toInt()+"%...")
+            }
+
+        }
+    }
+
+    private fun showFileChooser() {
+        val intent = Intent()
+        intent.type="image/"
+        intent.action=Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent,"SELECCIONE UNA IMAGEN"),PICK_IMAGE_REQUEST)
     }
 }

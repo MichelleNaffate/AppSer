@@ -45,19 +45,40 @@
         app:civ_border_color="@color/cafecito"
         android:layout_gravity="center_horizontal"/>
 
-    <Button
-        android:id="@+id/btnEditar_foto"
-        android:layout_width="100dp"
-        android:layout_height="55dp"
-        android:elevation="5dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/btnFuerte"
-        android:textSize="15sp"
-        android:text="@string/btnCambiarFoto"
-        android:textColor="@color/white"
-        app:cornerRadius="40dp"
-        android:textAllCaps="false"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <Button
+            android:id="@+id/btnEditar_foto"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="60dp"
+            android:backgroundTint="@color/btnFuerte"
+            android:elevation="5dp"
+            android:text="subir foto"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:cornerRadius="40dp" />
+        <Button
+            android:id="@+id/btnguardar"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:backgroundTint="@color/btnFuerte"
+            android:elevation="5dp"
+            android:text="Guardar"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:cornerRadius="40dp" />
+
+    </LinearLayout>
+
 
     <EditText
         android:id="@+id/modificar_Usuario_nombre"
@@ -69,7 +90,7 @@
         android:textColorHint="@color/cafecito"
         android:textColorHighlight="@color/cafecito"
         android:inputType="text"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:textColor="@color/titulos"/>
