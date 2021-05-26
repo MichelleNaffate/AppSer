@@ -40,9 +40,21 @@ class MetasActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        /*
+        cbxMetas.setOnCheckedChangeListener{ buttonView, isChecked ->
+            if (isChecked){
+                checkMeta()
+                buttonView.setTypeface(null, Typeface.ITALIC)
+            }else{
+                buttonView.setTypeface(null,Typeface.NORMAL)
+            }
+        }
+        */
+
         btnGuardarCheck.setOnClickListener{
             checkMeta()
         }
+
     }
 
     fun cargarMetas(){
@@ -57,49 +69,30 @@ class MetasActivity : AppCompatActivity() {
                 gridviewMetas.adapter = adapter
             }
             .addOnFailureListener{
-                Toast.makeText(baseContext, "Error: Intente de Nuevo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Error: Intente de nuevo", Toast.LENGTH_SHORT).show()
             }
     }
 
     fun checkMeta(){
-        if(cbxMetas.isChecked != null) {
-            val check: Boolean = true
+        if(cbxMetas.isChecked){
             var id: String = ""
-            storage.collection("Metas").whereEqualTo("contenidoMeta", txtMeta.text.toString())
+            storage.collection("Metas")
+                .whereEqualTo("check", false)
+                .whereEqualTo("contenidoMeta", txtMeta.text.toString())
                 .whereEqualTo("email", usuario.currentUser?.email)
                 .get()
                 .addOnSuccessListener {
                     it.forEach {
-                        id = it.id
-                    }
-                    storage.collection("Metas")
-                        .whereEqualTo("contenidoMeta", txtMeta.text.toString())
-                        .whereEqualTo("email", usuario.currentUser?.email)
-                        .get()
-                        .addOnSuccessListener {
-                            storage.collection("Metas").document("$id")
-                                .set(
-                                    hashMapOf(
-                                        "check" to check,
-                                        "contenidoMeta" to txtMeta.text.toString(),
-                                        "email" to usuario.currentUser?.email
-                                    )
-                                )
+                        if (it.exists()) {
+                            id = it.reference.id
+                            storage.collection("Metas").document("$id").update("check", true)
                                 .addOnSuccessListener {
-                                    Toast.makeText(
-                                        getApplicationContext(),
-                                        "¡Felicidades Meta Cumplida!",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                                .addOnFailureListener {
-                                    Toast.makeText(
-                                        getApplicationContext(),
-                                        "Intente de Nuevo",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
+                                    Toast.makeText(getApplicationContext(), "¡Felicidades meta cumplida!", Toast.LENGTH_SHORT).show()
                                 }
                         }
+                    }
+                }.addOnFailureListener {
+                    Toast.makeText(getApplicationContext(), "Intente de nuevo", Toast.LENGTH_SHORT).show()
                 }
         }
     }
