@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -69,7 +70,7 @@ class AjustesActivity : AppCompatActivity() {
         nProgressDialog = ProgressDialog(this)
         Usuarioss = intent.getStringExtra("Usuario").toString()
         nstorage = FirebaseStorage.getInstance().reference
-
+cargarImagen()
         var tv_nombre = findViewById(R.id.modificar_Usuario_nombre) as TextView
         var Bundle = intent.extras
         initUI()
@@ -138,8 +139,7 @@ class AjustesActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        perfil.setImageURI(data?.data)
-        FirebaseStorageManager().uploadImage(this, data?.data!!)
+
 
         if (resultCode == Activity.RESULT_OK) {
             when (requestCode) {
@@ -147,22 +147,22 @@ class AjustesActivity : AppCompatActivity() {
                     if (data != null) {
                         perfil.setImageURI(data.data)
                         FirebaseStorageManager().uploadImage(this, data.data!!)
-
-
                     }
 
                 }
                 REQUEST_FROM_GALLERY -> {
                     if (data != null) {
+
                         perfil.setImageURI(data.data)
                         FirebaseStorageManager().uploadImage(this, data.data!!)
+
                     }
 
                 }
             }
 
             Toast.makeText(
-                baseContext, "${data.data}se ha cambiado correctamente.",
+                baseContext, "se ha cambiado correctamente.",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -179,7 +179,16 @@ class AjustesActivity : AppCompatActivity() {
 
     }
     fun cargarImagen(){
+        val imageFileName="${auth.currentUser?.email}/perfil.png"
 
+        val dowloadURLTask= nstorage.child(imageFileName).downloadUrl
+            dowloadURLTask.addOnSuccessListener {
+                Log.e(TAG,"IMAGE PHAT $it")
+                Glide.with(this /* context */)
+                    .load("$it").
+                    into(perfil)
+
+            }
 
     }
 

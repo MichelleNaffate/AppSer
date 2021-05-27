@@ -5,11 +5,12 @@ import android.content.Context
 import android.net.Uri
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 
 class FirebaseStorageManager {
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var storage: FirebaseFirestore
 
     private val TAG="FirebaseStorageManager"
     private val mstorageRef= FirebaseStorage.getInstance().reference
@@ -18,6 +19,7 @@ class FirebaseStorageManager {
 
     fun uploadImage(mContext: Context, imageURI: Uri){
         auth = FirebaseAuth.getInstance()
+        storage = FirebaseFirestore.getInstance()
         mProgressDialog= ProgressDialog(mContext)
         mProgressDialog.setMessage("Please wait, image being uploading...")
         val imageFileName="${auth.currentUser?.email}/perfil${System.currentTimeMillis()}.png"
@@ -27,6 +29,7 @@ class FirebaseStorageManager {
             val dowloadURLTask= mstorageRef.child(imageFileName).downloadUrl
             dowloadURLTask.addOnSuccessListener {
                 Log.e(TAG,"IMAGE PHAT $it")
+
                 mProgressDialog.dismiss()
             }.addOnFailureListener{
                 mProgressDialog.dismiss()

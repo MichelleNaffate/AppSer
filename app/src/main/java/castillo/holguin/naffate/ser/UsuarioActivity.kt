@@ -3,11 +3,15 @@ package castillo.holguin.naffate.ser
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_menu_opciones.*
 import kotlinx.android.synthetic.main.activity_trabajo_sig_enfo.*
@@ -18,6 +22,8 @@ class UsuarioActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var storage: FirebaseFirestore
     lateinit var nombre: String
+    private lateinit var nstorage: StorageReference
+    private val TAG="FirebaseStorageManager"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +32,8 @@ class UsuarioActivity : AppCompatActivity() {
 
         storage = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
+        nstorage = FirebaseStorage.getInstance().reference
+        cargarImagen()
 
         var tv_nombre = findViewById(R.id.nombre_Usuario) as TextView
         var Bundle = intent.extras
@@ -66,6 +74,19 @@ class UsuarioActivity : AppCompatActivity() {
         super.onBackPressed()
         var intent: Intent = Intent(this, MenuOpciones::class.java)
         startActivity(intent)
+
+    }
+    fun cargarImagen(){
+        val imageFileName="${auth.currentUser?.email}/perfil.png"
+
+        val dowloadURLTask= nstorage.child(imageFileName).downloadUrl
+        dowloadURLTask.addOnSuccessListener {
+            Log.e(TAG,"IMAGE PHAT $it")
+            Glide.with(this /* context */)
+                .load("$it").
+                into(perfilUsuario)
+
+        }
 
     }
 

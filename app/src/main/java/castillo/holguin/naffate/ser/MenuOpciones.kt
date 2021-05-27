@@ -3,21 +3,29 @@ package castillo.holguin.naffate.ser
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_menu_opciones.*
 import kotlinx.android.synthetic.main.activity_usuario.*
+import kotlinx.android.synthetic.main.activity_usuario.perfilUsuario
 
 class MenuOpciones : AppCompatActivity() {
 
+    private val TAG="FirebaseStorageManager"
     private lateinit var auth: FirebaseAuth
     private lateinit var storage: FirebaseFirestore
     var user = FirebaseAuth.getInstance().currentUser?.email.toString()
     lateinit var nombre: String
     lateinit var objAgua: String
     lateinit var objCorrer: String
+    private lateinit var nstorage: StorageReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +33,8 @@ class MenuOpciones : AppCompatActivity() {
 
         storage = FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
+        nstorage = FirebaseStorage.getInstance().reference
+        cargarImagen()
 
         btnActividades.setOnClickListener {
             var intent : Intent = Intent(this, CatalogoActividades:: class.java)
@@ -80,5 +90,18 @@ class MenuOpciones : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         System.exit(0)
+    }
+    fun cargarImagen(){
+        val imageFileName="${auth.currentUser?.email}/perfil.png"
+
+        val dowloadURLTask= nstorage.child(imageFileName).downloadUrl
+        dowloadURLTask.addOnSuccessListener {
+            Log.e(TAG,"IMAGE PHAT $it")
+            Glide.with(this /* context */)
+                .load("$it").
+                into(btnUsuario)
+
+        }
+
     }
 }
