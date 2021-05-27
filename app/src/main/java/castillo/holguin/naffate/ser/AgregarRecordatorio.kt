@@ -31,7 +31,7 @@ class AgregarRecordatorio  : AppCompatActivity() {
 
         edit_fechaRecordatorio.setOnClickListener{
             val cal = Calendar.getInstance()
-            val dateSetListener = DatePickerDialog.OnDateSetListener{ datePicker, day, mounth, year ->
+            val dateSetListener = DatePickerDialog.OnDateSetListener{ datePicker, year, mounth, day ->
                 cal.set(Calendar.DAY_OF_MONTH, day)
                 cal.set(Calendar.MONTH, mounth)
                 cal.set(Calendar.YEAR, year)
@@ -41,8 +41,8 @@ class AgregarRecordatorio  : AppCompatActivity() {
                 var fechaDisplay: String = "$year/$mes/$day"
                 edit_fechaRecordatorio.setText(fechaDisplay)
             }
-            DatePickerDialog(root.context, dateSetListener, cal.get(Calendar.DAY_OF_MONTH),
-                cal.get(Calendar.MONTH), cal.get(Calendar.YEAR)).show()
+            DatePickerDialog(root.context, dateSetListener, cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
         }
 
         edit_HoraRecordatorio.setOnClickListener{
