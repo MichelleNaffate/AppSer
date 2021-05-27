@@ -36,6 +36,10 @@ class AgregarRecordatorio  : AppCompatActivity() {
                 cal.set(Calendar.MONTH, mounth)
                 cal.set(Calendar.YEAR, year)
                 edit_fechaRecordatorio.text.toString()
+
+                var mes: Int = mounth + 1
+                var fechaDisplay: String = "$year/$mes/$day"
+                edit_fechaRecordatorio.setText(fechaDisplay)
             }
             DatePickerDialog(root.context, dateSetListener, cal.get(Calendar.DAY_OF_MONTH),
                 cal.get(Calendar.MONTH), cal.get(Calendar.YEAR)).show()
@@ -48,6 +52,9 @@ class AgregarRecordatorio  : AppCompatActivity() {
                 cal.set(Calendar.MINUTE, minute)
                 var format = SimpleDateFormat("HH:mm").format(cal.time)
                 edit_HoraRecordatorio.text.toString().format("$format")
+
+                var horaDisplay: String = "$hour:$minute"
+                edit_HoraRecordatorio.setText(horaDisplay)
             }
             TimePickerDialog(root.context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY),
                 cal.get(Calendar.MINUTE), true).show()
