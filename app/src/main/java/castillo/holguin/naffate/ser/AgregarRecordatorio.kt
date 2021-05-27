@@ -53,8 +53,8 @@ class AgregarRecordatorio  : AppCompatActivity() {
                 var format = SimpleDateFormat("HH:mm").format(cal.time)
                 edit_HoraRecordatorio.text.toString().format("$format")
 
-                var horaDisplay: String = "$hour:$minute"
-                edit_HoraRecordatorio.setText(horaDisplay)
+                var horaDisplay: String = "${hour.toString()}:${minute.toString()}"
+                edit_HoraRecordatorio.setText(format)
             }
             TimePickerDialog(root.context, timeSetListener, cal.get(Calendar.HOUR_OF_DAY),
                 cal.get(Calendar.MINUTE), true).show()

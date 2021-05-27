@@ -85,7 +85,7 @@ class RecordatoriosActivity : AppCompatActivity() {
             var vista = inflador.inflate(R.layout.contenido_recordatorios, null)
             vista.txtTituloRecordatorio.setText(recordatorio.titulo)
             vista.txt_FechaRecordatorio.setText(recordatorio.dia)
-            vista.txt_FechaRecordatorio.setText(recordatorio.dia)
+            vista.txt_HoraRecordatorio.setText(recordatorio.hora)
             return vista
         }
     }
