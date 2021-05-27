@@ -34,6 +34,7 @@ class ContenidoAyuda : AppCompatActivity() {
                         var intent: Intent = Intent(this, UsuarioActivity::class.java)
                         intent.putExtra("nombre", "$nombre")
                         startActivity(intent)
+                        finish()
                     }
                 }
         }
@@ -50,8 +51,16 @@ class ContenidoAyuda : AppCompatActivity() {
                         intent.putExtra(Intent.EXTRA_SUBJECT, subject)
                         intent.putExtra(Intent.EXTRA_TEXT, edit_ContenidoDuda.text.toString())
                         startActivity(intent)
+
                     }
                 }
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, UsuarioActivity::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }

@@ -33,6 +33,7 @@ class AgregarNota : AppCompatActivity() {
                     Toast.makeText(getApplicationContext(),"Meta Agregada", Toast.LENGTH_SHORT).show()
                     var intent : Intent = Intent(this, MetasActivity:: class.java)
                     startActivity(intent)
+                    finish()
                 }
                 .addOnFailureListener{
                     Toast.makeText(getApplicationContext(), "Intente de Nuevo", Toast.LENGTH_SHORT).show()
@@ -42,7 +43,13 @@ class AgregarNota : AppCompatActivity() {
         navegar.setOnClickListener{
             var intent : Intent = Intent(this, MetasActivity:: class.java)
             startActivity(intent)
+            finish()
         }
 
+    }
+    override fun onBackPressed() {
+        var intent: Intent = Intent(this, MetasActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

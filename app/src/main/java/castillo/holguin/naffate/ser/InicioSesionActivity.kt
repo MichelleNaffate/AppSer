@@ -32,6 +32,7 @@ class InicioSesionActivity : AppCompatActivity() {
         view_olvidaContra.setOnClickListener {
             val intent: Intent = Intent(this, RecuperarPasswordActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
@@ -68,10 +69,9 @@ class InicioSesionActivity : AppCompatActivity() {
     }
     override fun onBackPressed() {
         super.onBackPressed()
-
         var intent: Intent = Intent(this, MenuMain::class.java)
-
         startActivity(intent)
+        finish()
 
     }
 

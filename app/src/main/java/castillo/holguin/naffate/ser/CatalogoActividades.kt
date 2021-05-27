@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_hacer_ejercicio.*
 import kotlinx.android.synthetic.main.activity_siesta_recargadora.*
 import kotlinx.android.synthetic.main.contenido.view.*
 import kotlinx.android.synthetic.main.contenido.view.txtTitulo
+import kotlin.system.exitProcess
 
 class CatalogoActividades : AppCompatActivity() {
 
@@ -33,6 +34,7 @@ class CatalogoActividades : AppCompatActivity() {
         btnNavegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
+            finish()
         }
 
     }
@@ -107,6 +109,11 @@ class CatalogoActividades : AppCompatActivity() {
             return actividades.size
         }
 
+    }
+    override fun onBackPressed() {
+        var intent: Intent = Intent(this, MenuOpciones::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }

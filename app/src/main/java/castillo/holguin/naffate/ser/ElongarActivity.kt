@@ -26,6 +26,7 @@ class ElongarActivity : AppCompatActivity() {
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, CatalogoActividades::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
@@ -73,5 +74,12 @@ class ElongarActivity : AppCompatActivity() {
         override fun getCount(): Int {
             return ejercicios.size
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, CatalogoActividades::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }

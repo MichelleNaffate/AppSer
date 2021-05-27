@@ -32,6 +32,8 @@ import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.navegar
+import kotlinx.android.synthetic.main.activity_menu_opciones.*
+import kotlinx.android.synthetic.main.activity_yoga.*
 import java.io.InputStream
 import java.util.*
 
@@ -57,35 +59,49 @@ class AjustesActivity : AppCompatActivity() {
     }
 
     private val TAG="FirebaseStorageManager"
+    lateinit var nombre: String
+    lateinit var url: String
+    lateinit var urlnuevo: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ajustes)
-
-
         usuario = Firebase.auth
         storage = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
         nProgressDialog = ProgressDialog(this)
         Usuarioss = intent.getStringExtra("Usuario").toString()
         nstorage = FirebaseStorage.getInstance().reference
-cargarImagen()
+        cargarImagen()
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_ajustes)
+
         var tv_nombre = findViewById(R.id.modificar_Usuario_nombre) as TextView
         var Bundle = intent.extras
         initUI()
 
 
         if (Bundle != null) {
-            var nombre = Bundle.getString("nombre")
+             nombre = Bundle.getString("nombre").toString()
             tv_nombre.setText("$nombre")
+            url=Bundle.getString("url").toString()
+            Glide.with(this /* context */)
+                .load("$url").
+                into(perfil)
         }
 
-
+        navegar.setOnClickListener(){
+            var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
+            var intent: Intent = Intent(this, UsuarioActivity::class.java)
+            intent.putExtra("nombre", "$usuarioNombre")
+            startActivity(intent)
+            finish()
+        }
 
         btnRecuperar_contraseña.setOnClickListener {
             var intent: Intent = Intent(this, RecuperarPasswordActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         btncambiarnombre_usuario.setOnClickListener() {
@@ -106,15 +122,11 @@ cargarImagen()
                 }
         }
 
-        navegar.setOnClickListener {
-            var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
-            var intent: Intent = Intent(this, UsuarioActivity::class.java)
-            intent.putExtra("nombre", "$usuarioNombre")
-            startActivity(intent)
-        }
+
 
 
     }
+
 
     private fun initUI() {
         btncamara.setOnClickListener {
@@ -169,30 +181,24 @@ cargarImagen()
 
 
     }
-
     override fun onBackPressed() {
-        super.onBackPressed()
-        var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
-        var intent: Intent = Intent(this, UsuarioActivity::class.java)
-        intent.putExtra("nombre", "$usuarioNombre")
-        startActivity(intent)
 
-    }
+            var usuarioNombre: String = modificar_Usuario_nombre.text.toString()
+            var intent: Intent = Intent(this, UsuarioActivity::class.java)
+            intent.putExtra("nombre", "$usuarioNombre")
+            startActivity(intent)
+            finish()
+        }
     fun cargarImagen(){
         val imageFileName="${auth.currentUser?.email}/perfil.png"
 
         val dowloadURLTask= nstorage.child(imageFileName).downloadUrl
-            dowloadURLTask.addOnSuccessListener {
-                Log.e(TAG,"IMAGE PHAT $it")
-                Glide.with(this /* context */)
-                    .load("$it").
-                    into(perfil)
+        dowloadURLTask.addOnSuccessListener {
+            Log.e(TAG,"IMAGE PHAT $it")
+            Glide.with(this /* context */)
+                .load("$it").
+                into(perfil)
 
-            }
-
+        }
     }
-
-
-
-
-}
+    }

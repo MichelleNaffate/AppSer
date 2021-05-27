@@ -34,6 +34,7 @@ class RitualMatutinoActivity : AppCompatActivity() {
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
+            finish()
         }
 
         btnGuardarObjetivos.setOnClickListener {
@@ -54,6 +55,13 @@ class RitualMatutinoActivity : AppCompatActivity() {
             .addOnFailureListener{
                 Toast.makeText(getApplicationContext(), "Intente de Nuevo", Toast.LENGTH_SHORT).show()
             }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, MenuOpciones::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }
 

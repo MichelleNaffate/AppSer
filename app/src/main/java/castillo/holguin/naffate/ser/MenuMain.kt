@@ -20,6 +20,7 @@ class MenuMain : AppCompatActivity() {
         btnRediRegistrarse.setOnClickListener {
             var intent : Intent = Intent(this, RegistroActivity:: class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

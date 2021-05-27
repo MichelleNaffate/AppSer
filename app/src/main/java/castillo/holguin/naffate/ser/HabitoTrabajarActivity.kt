@@ -4,7 +4,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_ajustes.*
 import kotlinx.android.synthetic.main.activity_habito_trabajar.*
+import kotlinx.android.synthetic.main.activity_habito_trabajar.navegar
 
 class HabitoTrabajarActivity : AppCompatActivity() {
 
@@ -30,13 +32,21 @@ class HabitoTrabajarActivity : AppCompatActivity() {
         btnMetas.setOnClickListener {
             var intent : Intent = Intent(this, MetasActivity:: class.java)
             startActivity(intent)
+            finish()
         }
 
         navegar.setOnClickListener{
             var intent : Intent = Intent(this, MenuOpciones:: class.java)
             startActivity(intent)
+            finish()
         }
 
+    }
+    override fun onBackPressed() {
+
+        var intent: Intent = Intent(this, MenuOpciones::class.java)
+        startActivity(intent)
+        finish()
     }
 
 }

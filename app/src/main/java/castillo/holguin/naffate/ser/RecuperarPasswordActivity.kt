@@ -1,5 +1,6 @@
 package castillo.holguin.naffate.ser
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -29,6 +30,7 @@ class RecuperarPasswordActivity: AppCompatActivity() {
                 auth.sendPasswordResetEmail(correo).addOnCompleteListener{task ->
                     if(task.isSuccessful){
                         Toast.makeText(this, "Se envio a $correo", Toast.LENGTH_SHORT).show()
+                        finish()
                     } else {
                         Toast.makeText(this, "Error al enviar correo", Toast.LENGTH_SHORT).show()
                     }
@@ -38,4 +40,5 @@ class RecuperarPasswordActivity: AppCompatActivity() {
             }
         }
     }
+
 }

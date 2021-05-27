@@ -23,31 +23,37 @@ class MenuOpciones : AppCompatActivity() {
     private lateinit var storage: FirebaseFirestore
     var user = FirebaseAuth.getInstance().currentUser?.email.toString()
     lateinit var nombre: String
+
+
     lateinit var objAgua: String
     lateinit var objCorrer: String
     private lateinit var nstorage: StorageReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu_opciones)
-
         storage = FirebaseFirestore.getInstance()
         auth= FirebaseAuth.getInstance()
         nstorage = FirebaseStorage.getInstance().reference
         cargarImagen()
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_menu_opciones)
+
+
 
         btnActividades.setOnClickListener {
             var intent : Intent = Intent(this, CatalogoActividades:: class.java)
             startActivity(intent)
+            finish()
         }
         btnRecomendaciones.setOnClickListener {
             var intent : Intent = Intent(this, RecomendacionesActivity:: class.java)
             startActivity(intent)
+            finish()
         }
 
         btnHabitoTrabajar.setOnClickListener {
             var intent : Intent = Intent(this, HabitoTrabajarActivity:: class.java)
             startActivity(intent)
+            finish()
         }
 
         btnRitualMatutino.setOnClickListener {
@@ -61,9 +67,11 @@ class MenuOpciones : AppCompatActivity() {
                         intent.putExtra("objAgua", "$objAgua")
                         intent.putExtra("objCorrer", "$objCorrer")
                         startActivity(intent)
+                        finish()
                     } else {
                         var intent: Intent = Intent(this, RitualMatutinoActivity::class.java)
                         startActivity(intent)
+                        finish()
                     }
                 }
         }
@@ -77,6 +85,7 @@ class MenuOpciones : AppCompatActivity() {
                         var intent : Intent = Intent(this, UsuarioActivity:: class.java)
                         intent.putExtra("nombre","$nombre")
                         startActivity(intent)
+                        finish()
                     }
                 }
         }
@@ -84,12 +93,14 @@ class MenuOpciones : AppCompatActivity() {
         btnRecordatorios.setOnClickListener {
             var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
             startActivity(intent)
+            finish()
         }
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
         System.exit(0)
+        finish()
     }
     fun cargarImagen(){
         val imageFileName="${auth.currentUser?.email}/perfil.png"
@@ -102,6 +113,6 @@ class MenuOpciones : AppCompatActivity() {
                 into(btnUsuario)
 
         }
-
     }
+
 }

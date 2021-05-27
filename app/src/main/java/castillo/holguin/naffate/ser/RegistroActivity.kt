@@ -3,6 +3,7 @@ package castillo.holguin.naffate.ser
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -69,7 +70,8 @@ class RegistroActivity : AppCompatActivity() {
                         .set(map)
                         .addOnSuccessListener {
                             val intent: Intent = Intent(this, MenuOpciones::class.java)
-                            startActivity(intent) }
+                            startActivity(intent)
+                        finish()}
                         .addOnFailureListener {  }
 
                     Toast.makeText(baseContext, "El usuario ${edit_nombreNuevo.text.toString()} se ha creado correctamente.",
@@ -81,5 +83,12 @@ class RegistroActivity : AppCompatActivity() {
                 }
 
             }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, MenuMain::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }

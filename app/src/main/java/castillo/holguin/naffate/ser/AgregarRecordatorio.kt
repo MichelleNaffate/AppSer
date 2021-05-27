@@ -71,6 +71,7 @@ class AgregarRecordatorio  : AppCompatActivity() {
                     Toast.makeText(getApplicationContext(),"Recordatorio Agregado", Toast.LENGTH_SHORT).show()
                     var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
                     startActivity(intent)
+                    finish()
                 }
                 .addOnFailureListener{
                     Toast.makeText(getApplicationContext(), "Intente de Nuevo", Toast.LENGTH_SHORT).show()
@@ -80,7 +81,15 @@ class AgregarRecordatorio  : AppCompatActivity() {
         navegar.setOnClickListener{
             var intent : Intent = Intent(this, RecordatoriosActivity:: class.java)
             startActivity(intent)
+            finish()
         }
+
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, RecordatoriosActivity::class.java)
+        startActivity(intent)
+        finish()
 
     }
 }

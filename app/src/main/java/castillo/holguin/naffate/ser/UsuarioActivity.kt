@@ -22,25 +22,27 @@ class UsuarioActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var storage: FirebaseFirestore
     lateinit var nombre: String
+
     private lateinit var nstorage: StorageReference
     private val TAG="FirebaseStorageManager"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_usuario)
-
         storage = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
         nstorage = FirebaseStorage.getInstance().reference
         cargarImagen()
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_usuario)
 
         var tv_nombre = findViewById(R.id.nombre_Usuario) as TextView
         var Bundle = intent.extras
         if (Bundle != null) {
-            var nombre = Bundle.getString("nombre")
+             nombre = Bundle.getString("nombre").toString()
             tv_nombre.setText("$nombre")
+
         }
+
 
         btnCerrarSesion.setOnClickListener() {
             auth.signOut()
@@ -60,11 +62,13 @@ class UsuarioActivity : AppCompatActivity() {
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
+            finish()
         }
 
         btnAyuda.setOnClickListener {
             var intent: Intent = Intent(this, ContenidoAyuda::class.java)
             startActivity(intent)
+            finish()
 
         }
 
@@ -74,6 +78,7 @@ class UsuarioActivity : AppCompatActivity() {
         super.onBackPressed()
         var intent: Intent = Intent(this, MenuOpciones::class.java)
         startActivity(intent)
+        finish()
 
     }
     fun cargarImagen(){
@@ -87,7 +92,8 @@ class UsuarioActivity : AppCompatActivity() {
                 into(perfilUsuario)
 
         }
-
     }
+
+
 
 }

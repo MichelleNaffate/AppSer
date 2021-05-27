@@ -27,9 +27,12 @@ class RecomendacionesActivity : AppCompatActivity() {
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
+            finish()
         }
 
+
     }
+
 
     fun cargarEjercicios() {
         recomendaciones.add(ContenidoRecomendaciones("El arte de respirar", "Por Danny Penman",R.drawable.libro2))
@@ -89,5 +92,12 @@ class RecomendacionesActivity : AppCompatActivity() {
         override fun getCount(): Int {
             return recomendacion.size
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, MenuOpciones::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }

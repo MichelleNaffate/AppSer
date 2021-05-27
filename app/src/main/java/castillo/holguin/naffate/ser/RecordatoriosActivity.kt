@@ -31,11 +31,13 @@ class RecordatoriosActivity : AppCompatActivity() {
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, MenuOpciones::class.java)
             startActivity(intent)
+            finish()
         }
 
         btnAgregarRecordatorio.setOnClickListener{
             var intent:Intent = Intent(this,AgregarRecordatorio::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
@@ -86,5 +88,12 @@ class RecordatoriosActivity : AppCompatActivity() {
             vista.txt_FechaRecordatorio.setText(recordatorio.dia)
             return vista
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, MenuOpciones::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }

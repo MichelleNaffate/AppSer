@@ -27,12 +27,19 @@ class YogaActivity : AppCompatActivity() {
         navegar.setOnClickListener {
             var intent: Intent = Intent(this, CatalogoActividades::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
     fun cargarEjercicios() {
-        ejercicios.add(Contenido("Introducción a los Saludos del Sol", "7 minutos de introducción al yoga","7 min"))
-        ejercicios.add(Contenido("Saludos al Sol","El antiguo y relajante yoga","4 min"))
+        ejercicios.add(
+            Contenido(
+                "Introducción a los Saludos del Sol",
+                "7 minutos de introducción al yoga",
+                "7 min"
+            )
+        )
+        ejercicios.add(Contenido("Saludos al Sol", "El antiguo y relajante yoga", "4 min"))
     }
 
     class EjerciciosAdapter : BaseAdapter {
@@ -46,7 +53,8 @@ class YogaActivity : AppCompatActivity() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
             var ejercicio = ejercicios[position]
-            var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            var inflator =
+                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var vista = inflator.inflate(R.layout.contenido, null)
             vista.txtTitulo.setText(ejercicio.titulo)
             vista.txtDetalle.setText(ejercicio.detalle)
@@ -54,13 +62,12 @@ class YogaActivity : AppCompatActivity() {
             vista.ContenidoActividad.setOnClickListener() {
                 var url: String
                 val uri: Uri
-                if(position == 0){
+                if (position == 0) {
                     url = "https://www.youtube.com/watch?v=PhkyDKNYBMg"
                     uri = Uri.parse(url)
                     val intent = Intent(Intent.ACTION_VIEW, uri)
                     context!!.startActivity(intent)
-                }
-                else if(position == 1){
+                } else if (position == 1) {
                     url = "https://www.youtube.com/watch?v=vs47BM1uE18"
                     uri = Uri.parse(url)
                     val intent = Intent(Intent.ACTION_VIEW, uri)
@@ -81,5 +88,12 @@ class YogaActivity : AppCompatActivity() {
         override fun getCount(): Int {
             return ejercicios.size
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var intent: Intent = Intent(this, CatalogoActividades::class.java)
+        startActivity(intent)
+        finish()
+
     }
 }

@@ -38,6 +38,7 @@ class MetasActivity : AppCompatActivity() {
         btnAgregarNota.setOnClickListener{
             var intent: Intent = Intent(this, AgregarNota::class.java)
             startActivity(intent)
+            finish()
         }
 
         /*
@@ -127,5 +128,11 @@ class MetasActivity : AppCompatActivity() {
             vista.cbxMetas.setChecked(meta.check)
             return vista
         }
+    }
+    override fun onBackPressed() {
+
+        var intent: Intent = Intent(this, HabitoTrabajarActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
